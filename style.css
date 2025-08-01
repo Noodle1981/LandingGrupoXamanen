@@ -102,7 +102,6 @@ h1, h2, h3, h4, h5, h6 {
 /* ==================== 4. HERO SECTION V2 ==================== */
 .hero-section-v2 {
     padding: 140px 0;
-    /* IMAGEN DE FONDO (SUGERENCIA: USA UNA IMAGEN ABSTRACTA O DE TECNOLOGÍA) */
     background-image: url('./img/hero2.png');
     background-size: cover;
     background-position: center;
@@ -111,11 +110,10 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: rgba(40, 23, 19, 0.7); /* Overlay con tu color oscuro */
+    background-color: rgba(40, 23, 19, 0.7);
 }
 .hero-section-v2 .hero-title { color: var(--white-color); }
 .hero-section-v2 .hero-subtitle { max-width: 750px; opacity: 0.9; }
-
 
 /* ==================== 5. NOSOTROS V2 (PARTNERS) ==================== */
 .partner-feature-box {
@@ -191,7 +189,6 @@ h1, h2, h3, h4, h5, h6 {
 /* ==================== 8. SECCIÓN MINERÍA ==================== */
 .mineria-section {
     position: relative;
-    /* Imagen de minería en San Juan, Argentina. ¡Reemplazar por una propia si tienes! */
     background-image: url('./img/mineria.png');
     background-size: cover;
     background-position: center;
@@ -202,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(40, 23, 19, 0.8); /* Overlay oscuro */
+    background: rgba(40, 23, 19, 0.8);
     z-index: -1;
 }
 
@@ -259,19 +256,235 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-3px);
 }
 
-/* ==================== CSS para logos de clientes (adaptado a la nueva identidad) ==================== */
-.client-logos-container {
-    padding: 3rem 1.5rem;
-    border: 3px solid var(--primary-color);
-    /* ... otros estilos del original ... */
+/* ===================================================================
+   11. ESTILOS FUSIONADOS PARA SECCIONES ADICIONALES (ARREGLADO)
+   Descripción: Estilos adaptados para integrarse con la estructura
+   de Bootstrap y variables existentes.
+=================================================================== */
+
+/* -------------------------------------------------------------------
+   A. Estilos para los Nuevos 'Hero'
+------------------------------------------------------------------- */
+.hero-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white-color);
+    overflow: hidden;
+    padding: 60px 0;
 }
 
+.hero-section.main-hero {
+    height: 100vh;
+    min-height: 700px;
+}
 
-/* La imagen dentro del mockup */
-.hero-mockup-v2 img {
-    display: block;
+.hero-section.mini-hero {
+    min-height: 600px;
+}
+
+.hero-section .hero-background-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    background-image: url('./img/Guanaco2.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: kenburns-effect 20s ease-out infinite;
+}
+
+@keyframes kenburns-effect {
+    0% { transform: scale(1.1); }
+    50% { transform: scale(1.2) translate(-5%, 5%); }
+    100% { transform: scale(1.1); }
+}
+
+.hero-overlay.darker {
+    background-color: rgba(40, 23, 19, 0.85);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--white-color);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content .hero-subtitle {
+    font-size: 1.25rem;
+    max-width: 750px;
+    margin: 1rem auto 2rem auto;
+    opacity: 0.9;
+    color: var(--white-color);
+}
+
+.hero-title.medium { font-size: clamp(2rem, 5vw, 3rem); }
+.hero-subtitle.small { max-width: 600px; font-size: 1.1rem; }
+
+.btn-light-custom {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid transparent;
+    color: var(--dark-color);
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.btn-light-custom:hover {
+    background-color: var(--white-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+.btn-light-custom.btn-lg {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+}
+
+/* -------------------------------------------------------------------
+   B. Estilos para Transformación Digital (#digital)
+------------------------------------------------------------------- */
+#particles-js {
+    position: absolute;
     width: 100%;
-    height: auto;
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
+    height: 100%;
+    top: 0; left: 0;
+    z-index: 1;
+}
+
+#digital .hero-content {
+    position: relative;
+    z-index: 2; /* Nivel 2: por encima de las partículas */
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 2rem 0;
+    color: #c7d2e0;
+}
+.service-list span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+}
+
+.slogan {
+    margin-top: 1.5rem;
+    font-style: italic;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* -------------------------------------------------------------------
+   C. Estilos para Socios Web (#web)
+------------------------------------------------------------------- */
+.partner-card {
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.partner-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+.partner-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+.partner-card .partner-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+.partner-card .partner-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+.partner-card .partner-info ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.partner-card .partner-info ul li {
+    padding-left: 1.75rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+.partner-card .partner-info ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+/* -------------------------------------------------------------------
+   D. Estilos para Economía Circular (#circular)
+------------------------------------------------------------------- */
+.teaser-hero {
+    min-height: auto;
+}
+.teaser-hero .hero-background {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(50%) contrast(1.1);
+    z-index: 0;
+}
+.teaser-logo {
+    max-height: 250px;
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 0;
+    margin-top: 2rem;
+    width: 100%;
+ margin-left: auto;
+    margin-right: auto;
+
+
+    max-width: 500px;
+}
+.subscribe-form input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px 0 0 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white-color);
+    border-right: none;
+}
+.subscribe-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+.subscribe-form button {
+    border-radius: 0 8px 8px 0;
 }

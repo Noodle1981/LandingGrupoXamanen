@@ -15,16 +15,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- Enlazamos a la nueva hoja de estilos -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ==================== HEADER (MODIFICADO) ==================== -->
+    <!-- ==================== HEADER ==================== -->
     <header class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
-            <!-- Logo como texto con estilos -->
             <a class="navbar-brand logo-text" href="#">
                 <span class="logo-g">G</span><span class="logo-x">X</span> Grupo <span class="logo-x">X</span>amanen
             </a>
@@ -60,7 +58,75 @@
     </header>
 
     <main>
-    <!-- ==================== HERO SECTION (REDiseñado) ==================== -->
+
+        <!-- ==================== HERO PRINCIPAL (CORREGIDO) ==================== -->
+        <section id="hero-principal" class="hero-section main-hero">
+            <div class="hero-background-image"></div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content" data-aos="fade-up">
+                <h1 class="hero-title">Tecnología con Identidad. <br> Soluciones con Impacto.</h1>
+                <p class="hero-subtitle">Desde la aridez de San Juan, creamos herramientas digitales que potencian a empresas en todo el país.</p>
+                <a href="#digital" class="btn btn-light-custom btn-lg hero-btn">Comenzar el Recorrido</a>
+            </div>
+        </section>
+
+        <!-- ==================== SECCIÓN TRANSFORMACIÓN DIGITAL (CORREGIDO) ==================== -->
+        <section id="digital" class="hero-section mini-hero">
+            <div id="particles-js"></div>
+            <div class="hero-overlay darker"></div>
+            <div class="container hero-content center-aligned" data-aos="fade-up">
+                <span class="text-primary-custom fw-bold text-uppercase">Impulso Estratégico</span>
+                <h2 class="hero-title medium mt-2">Evoluciona. Automatiza. Lidera.</h2>
+                <p class="hero-subtitle small">Repensamos tus procesos e integramos tecnología para construir ventajas competitivas duraderas.</p>
+                <div class="service-list">
+                    <span><i class="fas fa-sitemap me-2"></i>Consultoría de Procesos</span>
+                    <span><i class="fas fa-code me-2"></i>Software a Medida</span>
+                    <span><i class="fas fa-chart-pie me-2"></i>Business Intelligence</span>
+                </div>
+                <div class="slogan">"Salvar al mundo, siempre 💪"</div>
+            </div>
+        </section>
+
+        <!-- ==================== SECCIÓN SOCIOS WEB (CORREGIDA) ==================== -->
+        <section id="web" class="py-5 bg-light-subtle">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <span class="text-primary-custom fw-bold text-uppercase">Partners en Creatividad</span>
+                    <h2 class="section-title mt-2">Diseño y Desarrollo Web de Alto Impacto</h2>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+                        <div class="partner-card">
+                            <img src="https://images.unsplash.com/photo-1553514021-0a655755507b?w=500" alt="Socio de Diseño UX/UI">
+                            <div class="partner-info">
+                                <h3>Diseño de Experiencias (UX/UI)</h3>
+                                <ul>
+                                    <li>Interfaces Intuitivas y Atractivas</li>
+                                    <li>Sistemas de Diseño Escalables</li>
+                                    <li>Prototipado y Testeo con Usuarios</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+                        <div class="partner-card">
+                            <img src="https://images.unsplash.com/photo-1504639725590-7ea007b1a555?w=500" alt="Socio de Desarrollo Web">
+                            <div class="partner-info">
+                                <h3>Desarrollo de Alto Rendimiento</h3>
+                                <ul>
+                                    <li>Webs Corporativas y E-commerce</li>
+                                    <li>Aplicaciones Web Progresivas (PWA)</li>
+                                    <li>Optimización de Velocidad y SEO Técnico</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================== SECCIONES ORIGINALES (SIN CAMBIOS) ==================== -->
+
         <section id="hero" class="hero-section-v2 text-center text-white position-relative">
             <div class="hero-overlay"></div>
             <div class="container position-relative" data-aos="fade-up">
@@ -69,19 +135,7 @@
                 <a href="#plataforma" class="btn btn-primary-custom btn-lg">Descubre la Plataforma</a>
             </div>
         </section>
-        <!-- ==================== LOGOS DE CLIENTES (COMENTADO) ==================== -->
-        <!-- 
-        <section id="clientes" class="py-5 bg-light-subtle">
-            <div class="container text-center" data-aos="fade-up">
-                <h3 class="text-muted fw-normal mb-5">Consultoras que ya confían en nuestra tecnología</h3>
-                <div class="client-logos-container">
-                    <img src="./img/logos/iscot.JPG" alt="Logo ISCOT" class="client-logo">
-                </div>
-            </div>
-        </section> 
-        -->
 
-        <!-- ==================== NOSOTROS Y POLÍTICA (REDiseñado) ==================== -->
         <section id="nosotros" class="py-5 nosotros-v2">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
@@ -115,7 +169,6 @@
             </div>
         </section>
 
-        <!-- ==================== SERVICIOS (REDiseñado) ==================== -->
         <section id="servicios" class="py-5 bg-light-subtle services-v2">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
@@ -148,15 +201,12 @@
             </div>
         </section>
 
-        <!-- ==================== PLATAFORMA (REDiseñado) ==================== -->
         <section id="plataforma" class="py-5">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
                     <h2 class="section-title">Características Clave de la Plataforma</h2>
                     <p class="lead text-muted">Herramientas poderosas y fáciles de usar para ti y tus clientes.</p>
                 </div>
-
-                <!-- Feature 1: Checklists -->
                 <div class="row feature-alternating-row align-items-center" data-aos="fade-left">
                     <div class="col-md-6">
                         <img src="./img/inspect.png" alt="Checklists e Inspecciones Digitales" class="img-fluid rounded shadow-lg">
@@ -169,8 +219,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Feature 2: Dashboard -->
                 <div class="row feature-alternating-row align-items-center" data-aos="fade-right">
                     <div class="col-md-6 order-md-2">
                          <img src="./img/dahboard.png" alt="Dashboard de Cumplimiento" class="img-fluid rounded shadow-lg">
@@ -183,8 +231,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Feature 3: Capacitación -->
                  <div class="row feature-alternating-row align-items-center" data-aos="fade-left">
                     <div class="col-md-6">
                         <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1470" alt="Capacitación y Certificación" class="img-fluid rounded shadow-lg">
@@ -197,11 +243,9 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- ==================== SECCIÓN MINERÍA ==================== -->
         <section id="mineria" class="py-5 bg-dark-custom text-white mineria-section">
             <div class="container">
                 <div class="row align-items-center g-5">
@@ -222,10 +266,23 @@
                 </div>
             </div>
         </section>
-        
-        <!-- ODS SECTION BORRADA -->
+      
+        <!-- ==================== SECCIÓN ECONOMÍA CIRCULAR (CORREGIDA) ==================== -->
+        <section id="circular" class="hero-section mini-hero teaser-hero py-5">
+            <div class="hero-background"></div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content center-aligned" data-aos="fade-up">
+                <img src="./img/circular.png" alt="Logo Circular San Juan" class="teaser-logo"> <!-- AJUSTA LA RUTA A TU LOGO -->
+                <h2 class="hero-title medium">Innovando para un Futuro Sostenible</h2>
+                <p class="hero-subtitle small">Próximamente, una plataforma para conectar la economía circular y generar valor a partir de los recursos.</p>
+                <form class="subscribe-form">
+                    <input type="email" class="form-control" placeholder="Tu email para ser el primero en saberlo" required>
+                    <button type="submit" class="btn btn-primary-custom">Notificarme</button>
+                </form>
+            </div>
+        </section>
 
-        <!-- ==================== STAFF (REDiseñado) ==================== -->
+        <!-- ==================== STAFF (SIN CAMBIOS) ==================== -->
         <section id="equipo" class="py-5 bg-light-subtle">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
@@ -265,7 +322,7 @@
             </div>
         </section>
 
-        <!-- ==================== CONTACTO ==================== -->
+        <!-- ==================== CONTACTO (SIN CAMBIOS) ==================== -->
         <section id="contacto" class="py-5">
             <div class="container" data-aos="fade-up">
                 <div class="row justify-content-center">
@@ -290,7 +347,7 @@
         </section>
     </main>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- ==================== FOOTER (SIN CAMBIOS) ==================== -->
     <footer class="footer-custom bg-dark-custom text-white-50 pt-5 pb-4">
         <div class="container">
             <div class="row">
@@ -337,8 +394,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <!-- Tu JS es funcional y no necesita cambios -->
+    <!-- Script para particles.js (opcional, si quieres usarlo en la sección #digital) -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="index.js"></script>
 </body>
-
 </html>
