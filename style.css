@@ -72,6 +72,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==================== 3. HEADER / NAVEGACIÓN ==================== */
+
+.logo-xamanen {
+    width: 300px;
+}
+
+
 .logo-text {
     font-family: var(--font-family-headings);
     font-weight: 700;
@@ -290,7 +296,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0; left: 0;
     width: 100%; height: 100%;
     z-index: 0;
-    background-image: url('./img/Guanaco2.jpg');
+    background-image: url('./img/heromax.png');
     background-size: cover;
     background-position: center;
     animation: kenburns-effect 20s ease-out infinite;
@@ -309,6 +315,14 @@ h1, h2, h3, h4, h5, h6 {
 .hero-content {
     position: relative;
     z-index: 2;
+    /* --- INICIO DE NUEVAS PROPIEDADES --- */
+    height: 100%; /* Hacemos que ocupe toda la altura de su padre (.hero-section) */
+    display: flex; /* Lo convertimos en contenedor flex */
+    flex-direction: column; /* Apilamos los hijos verticalmente */
+    justify-content:flex-end; /* Distribuimos el espacio: uno arriba, otro abajo */
+    align-items: center;
+    padding-top: 15vh; /* Damos un margen superior para que el título no quede pegado arriba */
+    padding-bottom: 10vh; /* Damos un margen inferior para que el botón no quede pegado abajo */
 }
 
 .hero-content .hero-title {
@@ -488,3 +502,4 @@ h1, h2, h3, h4, h5, h6 {
 .subscribe-form button {
     border-radius: 0 8px 8px 0;
 }
+
