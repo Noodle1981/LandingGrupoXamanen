@@ -116,6 +116,8 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   }
+   
+
   // Aplicamos la función a TODOS los formularios que queramos manejar
   handleContactForm("demo-form", "form-feedback"); // Para la página principal
   handleContactForm("contact-form-agro", "form-feedback-agro"); // Para la página de Agro
