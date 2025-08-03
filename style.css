@@ -1,357 +1,152 @@
 /* ===================================================================
-   GRUPO XAMANEN - PLATAFORMA HSE V2
-   Descripción: CSS para la landing page orientada a consultoras.
+   GRUPO XAMANEN - DISEÑO "AURORA GLASS"
+   Concepto: Futurista, Tecnológico, Dinámico.
 =================================================================== */
 
 /* ==================== 1. VARIABLES Y ESTILOS GLOBALES ==================== */
 :root {
-    --primary-color: #C8BB8E;
-    --primary-color-darker: #b1a98f;
-    --dark-color: #281713;
-    --text-color: #5A4E3C;
-    --light-color: #fdfcf9;
-    --white-color: #ffffff;
+    /* Paleta de Colores "Aurora" */
+    --aurora-purple: #65005E;
+    --aurora-blue: #3C84CE;
+    --aurora-cyan: #30EEE2;
+    --aurora-red-pop: #FF1919;
+    --dark-void: #0A0C10;
+    --light-text: #F0F2F5;
+    --light-text-muted: rgba(240, 242, 245, 0.7);
+
+    /* Estilos de Glassmorphism */
+    --glass-bg: rgba(18, 24, 39, 0.75);
+    --glass-blur: 10px;
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Fuentes y Bordes */
     --font-family-headings: 'Poppins', sans-serif;
     --font-family-base: 'Inter', sans-serif;
-    --border-radius: 12px;
-    --shadow-soft: 0 8px 24px rgba(40, 23, 19, 0.05);
-    --shadow-medium: 0 12px 40px rgba(40, 23, 19, 0.1);
+    --border-radius: 1rem; /* 16px */
 }
 
 body {
     font-family: var(--font-family-base);
-    color: var(--text-color);
-    background-color: var(--white-color);
+    color: var(--light-text);
     line-height: 1.7;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed; /* 'fixed' es clave para que el glassmorphism funcione bien */
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-headings);
-    color: var(--dark-color);
+    color: var(--light-text);
     font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .section-title {
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    font-weight: 700;
+    font-size: clamp(2.2rem, 5vw, 3rem);
     margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-.bg-light-subtle {
-    background-color: var(--light-color);
+.lead {
+    color: var(--light-text-muted);
+    font-weight: 400;
 }
 
-.bg-dark-custom {
-    background-color: var(--dark-color);
-}
-
-/* ==================== 2. COMPONENTES REUTILIZABLES ==================== */
-.btn-primary-custom {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--dark-color);
-    padding: 12px 30px;
-    font-weight: 600;
-    border-radius: 8px;
+/* ==================== 2. COMPONENTE CLAVE: GLASS PANEL ==================== */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-radius: var(--border-radius);
+    border: var(--glass-border);
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-.btn-primary-custom:hover,
-.btn-primary-custom:focus {
-    background-color: var(--primary-color-darker);
-    border-color: var(--primary-color-darker);
-    color: var(--dark-color);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-medium);
-}
-
-.text-primary-custom {
-    color: var(--primary-color) !important;
+@media (max-width: 767px) {
+    .glass-panel {
+        padding: 1.5rem;
+    }
 }
 
 /* ==================== 3. HEADER / NAVEGACIÓN ==================== */
-.logo-text {
-    font-family: var(--font-family-headings);
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--text-color) !important;
-    text-decoration: none;
+.navbar {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-bottom: var(--glass-border);
 }
-.logo-text .logo-g { color: #5A4E3C; }
-.logo-text .logo-x { color: #C8BB8E; }
 
 .navbar .nav-link {
-    font-weight: 500;
-    color: var(--text-color);
-    transition: color 0.3s;
-    padding: 0.5rem 1rem;
-    position: relative;
-}
-.navbar .nav-link::after {
-    content: ''; position: absolute; bottom: -5px;
-    left: 1rem; right: 1rem; height: 2px;
-    background-color: var(--primary-color);
-    transform: scaleX(0); transition: transform 0.3s ease;
-}
-.navbar .nav-link:hover::after, .navbar .nav-link.active::after { transform: scaleX(1); }
-.navbar .nav-link:hover, .navbar .nav-link.active { color: var(--primary-color); }
-.navbar .dropdown-menu { border-radius: var(--border-radius); border-color: #eee; box-shadow: var(--shadow-medium); }
-
-/* ==================== 4. HERO SECTION V2 ==================== */
-.hero-section-v2 {
-    padding: 140px 0;
-    background-image: url('./img/hero2.png');
-    background-size: cover;
-    background-position: center;
-}
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(40, 23, 19, 0.7);
-}
-.hero-section-v2 .hero-title { color: var(--white-color); }
-.hero-section-v2 .hero-subtitle { max-width: 750px; opacity: 0.9; }
-
-/* ==================== 5. NOSOTROS V2 (PARTNERS) ==================== */
-.partner-feature-box {
-    background-color: var(--white-color);
-    padding: 2.5rem;
-    border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: var(--shadow-soft);
-    transition: all 0.3s ease;
-    height: 100%;
-}
-.partner-feature-box:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-medium);
-}
-.partner-feature-box .icon-wrapper {
-    width: 70px; height: 70px;
-    margin: 0 auto 1.5rem auto;
-    background-color: var(--primary-color);
-    color: var(--dark-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-}
-
-/* ==================== 6. SERVICIOS V2 (CARDS) ==================== */
-.service-card {
-    background: var(--white-color);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-soft);
-    text-align: center;
-    transition: all 0.3s ease;
-    height: 100%;
-    border: 1px solid #eee;
-}
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-medium);
-    border-color: var(--primary-color);
-}
-.service-icon {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-}
-
-/* ==================== 7. PLATAFORMA V2 (ALTERNATING) ==================== */
-.feature-alternating-row {
-    margin-bottom: 5rem;
-}
-.feature-alternating-row:last-child {
-    margin-bottom: 0;
-}
-.feature-text { padding: 0 2rem; }
-.feature-icon-small {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    width: 50px; height: 50px;
-    background-color: rgba(200, 187, 142, 0.1);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-}
-@media (max-width: 767.98px) {
-    .feature-text { padding: 2rem 0 0 0; }
-    .feature-alternating-row .col-md-6 { text-align: center; }
-    .feature-icon-small { margin: 0 auto 1rem auto; }
-}
-
-/* ==================== 8. SECCIÓN MINERÍA ==================== */
-.mineria-section {
-    position: relative;
-    background-image: url('./img/mineria.png');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
-.mineria-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(40, 23, 19, 0.8);
-    z-index: -1;
-}
-
-/* ==================== 9. EQUIPO V2 (STAFF) ==================== */
-.staff-card-v2 {
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-.staff-card-v2:hover {
-    transform: scale(1.05);
-}
-.staff-img-v2 {
-    width: 160px; height: 160px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 1.5rem;
-    border: 5px solid var(--white-color);
-    box-shadow: var(--shadow-medium);
-}
-.staff-name {
-    font-size: 1.25rem;
-    margin-bottom: 0.25rem;
-}
-.staff-title {
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
-/* ==================== 10. FOOTER ==================== */
-.footer-custom {
-    color: rgba(255, 255, 255, 0.7);
-}
-.footer-link {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-.footer-link:hover { color: var(--white-color); }
-.footer-custom h5 {
-    color: var(--white-color);
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 1rem;
-}
-.social-icon {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-.social-icon:hover {
-    color: var(--primary-color);
-    transform: translateY(-3px);
+    color: var(--light-text-muted);
+    transition: color 0.3s ease;
 }
 
-/* ===================================================================
-   11. ESTILOS FUSIONADOS PARA SECCIONES ADICIONALES (ARREGLADO)
-   Descripción: Estilos adaptados para integrarse con la estructura
-   de Bootstrap y variables existentes.
-=================================================================== */
+.navbar .nav-link:hover, .navbar .nav-link.active {
+    color: var(--light-text);
+}
 
-/* -------------------------------------------------------------------
-   A. Estilos para los Nuevos 'Hero'
-------------------------------------------------------------------- */
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.2);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.dropdown-menu {
+    background: var(--dark-void);
+    border: var(--glass-border);
+    border-radius: var(--border-radius);
+}
+
+.dropdown-item {
+    color: var(--light-text-muted);
+}
+.dropdown-item:hover {
+    background: var(--glass-bg);
+    color: var(--light-text);
+}
+
+.logo-text {
+    /* Estilo de la fuente */
+    font-family: var(--font-family-headings);
+    font-size: 2rem; /* Ajusta el tamaño*/
+    font-weight: 700;
+    letter-spacing: 1px;
+    
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+
+    /* recorte de el fondo a la forma del texto */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* el color del texto transparente para que se vea el fondo */
+    color: transparent;
+}
+
+/* ==================== 4. SECCIÓN HERO & PARTICLES ==================== */
 .hero-section {
     position: relative;
+    height: 60vh;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--white-color);
-    overflow: hidden;
-    padding: 60px 0;
+    color: var(--light-text);
 }
 
-.hero-section.main-hero {
-    height: 100vh;
-    min-height: 700px;
-}
-
-.hero-section.mini-hero {
-    min-height: 600px;
-}
-
-.hero-section .hero-background-image {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 0;
-    background-image: url('./img/Guanaco2.jpg');
-    background-size: cover;
-    background-position: center;
-    animation: kenburns-effect 20s ease-out infinite;
-}
-
-@keyframes kenburns-effect {
-    0% { transform: scale(1.1); }
-    50% { transform: scale(1.2) translate(-5%, 5%); }
-    100% { transform: scale(1.1); }
-}
-
-.hero-overlay.darker {
-    background-color: rgba(40, 23, 19, 0.85);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-.hero-content .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    color: var(--white-color);
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.hero-content .hero-subtitle {
-    font-size: 1.25rem;
-    max-width: 750px;
-    margin: 1rem auto 2rem auto;
-    opacity: 0.9;
-    color: var(--white-color);
-}
-
-.hero-title.medium { font-size: clamp(2rem, 5vw, 3rem); }
-.hero-subtitle.small { max-width: 600px; font-size: 1.1rem; }
-
-.btn-light-custom {
-    background-color: rgba(255, 255, 255, 0.95);
-    border: 1px solid transparent;
-    color: var(--dark-color);
-    padding: 12px 30px;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-.btn-light-custom:hover {
-    background-color: var(--white-color);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-medium);
-}
-.btn-light-custom.btn-lg {
-    padding: 16px 40px;
-    font-size: 1.1rem;
-}
-
-/* -------------------------------------------------------------------
-   B. Estilos para Transformación Digital (#digital)
-------------------------------------------------------------------- */
 #particles-js {
     position: absolute;
     width: 100%;
@@ -360,131 +155,262 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
 }
 
-#digital .hero-content {
+.hero-content {
     position: relative;
-    z-index: 2; /* Nivel 2: por encima de las partículas */
+    z-index: 1;
+}
+
+.text-primary-custom {
+    color: var(--aurora-cyan) !important;
+}
+
+/* ==================== 4B. ANIMACIÓN DE TÍTULO HERO ==================== */
+.animated-title span {
+    display: inline-block; /* Necesario para aplicar transformaciones */
+    opacity: 0; /* Inicialmente, todas las palabras son invisibles */
+    animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
+}
+
+/* Animación para la primera palabra: Aparece y se va */
+.animated-title .word-1 {
+    animation: fadeInOut 3s ease-in-out forwards;
+}
+
+/* Animación para la segunda palabra: Aparece y se va, pero empieza más tarde */
+.animated-title .word-2 {
+    animation: fadeInOut 3s ease-in-out 3s forwards; /* Inicia después de 3s */
+}
+
+/* Animación para la tercera palabra: Aparece y se va, pero empieza aún más tarde */
+.animated-title .word-3 {
+    animation: fadeInOut 3s ease-in-out 6s forwards; /* Inicia después de 6s */
+}
+
+/* Keyframes para la animación de entrada y salida */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+    20%, 80% { /* Se mantiene visible durante este periodo */
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.9);
+    }
+}
+
+/* Después de que terminen las animaciones individuales, mostramos el título completo */
+.animated-title:hover span, /* Opcional: mostrar todo al pasar el ratón */
+.animated-title.finished span {
+    animation: none; /* Quitamos las animaciones individuales */
+    opacity: 1;
+    transform: none;
+}
+
+/* ==================== 5. SECCIONES Y CONTENIDO ==================== */
+section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.partner-feature-box {
+    text-align: center;
+    padding: 1.9rem;
+    height: 100%;
+}
+.partner-feature-box .icon-wrapper {
+    font-size: 2.5rem;
+    color: var(--aurora-cyan);
+    margin-bottom: 1rem;
+}
+.partner-feature-box h4 {
+    color: var(--light-text);
+}
+.partner-feature-box p {
+    color: var(--light-text-muted);
+}
+
+
+/* ==================== 6. ACCORDION PARA SOLUCIONES ==================== */
+.accordion-item {
+    background: transparent;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.accordion-button {
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    border-radius: var(--border-radius) !important;
+    color: var(--light-text);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    background: rgba(48, 238, 226, 0.15); /* Tono cyan semi-transparente */
+    color: var(--light-text);
+    box-shadow: inset 0 0 15px rgba(48, 238, 226, 0.2);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(60, 132, 206, 0.5); /* Tono azul para el foco */
+}
+
+.accordion-button::after { /* Personalizar ícono de flecha */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23F0F2F5'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+    padding: 2rem;
+    color: var(--light-text-muted);
+}
+
+.accordion-body strong {
+    color: var(--light-text);
+}
+
+.accordion-body ul {
+    padding-left: 1.2rem;
+}
+
+/* ==================== 9. EXPERTISE TABS ==================== */
+.nav-pills .nav-link {
+    padding: 12px 25px;
+    font-weight: 600;
+    color: var(--light-text-muted);
+    border-radius: 50px;
+    background-color: rgba(18, 24, 39, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: rgba(18, 24, 39, 0.7);
+    color: var(--light-text);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background: linear-gradient(90deg, var(--aurora-blue), var(--aurora-cyan));
+    color: var(--dark-void);
+    border-color: transparent;
+    box-shadow: 0 0 20px rgba(48, 238, 226, 0.5);
+    transform: translateY(-2px);
 }
 
 .service-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-    margin: 2rem 0;
-    color: #c7d2e0;
-}
-.service-list span {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-}
-
-.slogan {
-    margin-top: 1.5rem;
-    font-style: italic;
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
-/* -------------------------------------------------------------------
-   C. Estilos para Socios Web (#web)
-------------------------------------------------------------------- */
-.partner-card {
-    background-color: var(--white-color);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-.partner-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-medium);
-}
-.partner-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-.partner-card .partner-info {
-    padding: 1.5rem;
-    flex-grow: 1;
-}
-.partner-card .partner-info h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-}
-.partner-card .partner-info ul {
     list-style: none;
     padding-left: 0;
-    margin: 0;
+    margin-top: 1.5rem;
+    columns: 2; /* Mantenemos el formato de dos columnas */
+    column-gap: 2rem;
 }
-.partner-card .partner-info ul li {
-    padding-left: 1.75rem;
+
+.service-list li {
+    padding-left: 1.8rem;
     position: relative;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    color: var(--light-text-muted);
+    break-inside: avoid;
 }
-.partner-card .partner-info ul li::before {
-    content: '\f00c';
+
+/* El checkmark ahora brilla con el color cyan neón */
+.service-list li::before {
+    content: '\f058';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
-    color: var(--primary-color);
+    color: var(--aurora-cyan);
     position: absolute;
     left: 0;
-    top: 4px;
+    top: 5px;
+    font-size: 1.1rem;
+    text-shadow: 0 0 8px rgba(48, 238, 226, 0.7);
 }
 
-/* -------------------------------------------------------------------
-   D. Estilos para Economía Circular (#circular)
-------------------------------------------------------------------- */
-.teaser-hero {
-    min-height: auto;
-}
-.teaser-hero .hero-background {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-size: cover;
-    background-position: center;
-    filter: grayscale(50%) contrast(1.1);
-    z-index: 0;
-}
-.teaser-logo {
-    max-height: 250px;
-    margin-bottom: 1.5rem;
-    border-radius: 50%;
+@media (max-width: 767px) {
+    .service-list {
+        columns: 1; /* En móviles, usamos una sola columna */
+    }
 }
 
-.subscribe-form {
-    display: flex;
-    gap: 0;
-    margin-top: 2rem;
-    width: 100%;
- margin-left: auto;
-    margin-right: auto;
-
-
-    max-width: 500px;
+/* ==================== 7. FORMULARIO DE CONTACTO ==================== */
+#contact-title {
+    font-weight: 700;
+    min-height: 90px; /* Espacio para el efecto de tipeo */
 }
-.subscribe-form input {
-    flex-grow: 1;
+
+.form-label {
+    color: var(--light-text-muted);
+    font-weight: 500;
+}
+.form-control, .form-select {
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--light-text);
     padding: 0.75rem 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px 0 0 8px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--white-color);
-    border-right: none;
+    border-radius: 0.5rem;
 }
-.subscribe-form input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+.form-control:focus, .form-select:focus {
+    background-color: rgba(0,0,0,0.3);
+    color: var(--light-text);
+    border-color: var(--aurora-cyan);
+    box-shadow: 0 0 10px rgba(48, 238, 226, 0.3);
 }
-.subscribe-form button {
-    border-radius: 0 8px 8px 0;
+.form-control::placeholder {
+    color: rgba(255,255,255,0.3);
+}
+
+.btn-submit {
+    background: linear-gradient(90deg, var(--aurora-blue), var(--aurora-cyan));
+    border: none;
+    color: var(--dark-void);
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.btn-submit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(48, 238, 226, 0.4);
+}
+.form-check-label {
+    font-size: 0.9rem;
+    color: var(--light-text-muted);
+}
+.form-text {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* ==================== 8. FOOTER ==================== */
+footer {
+    background-color: var(--dark-void);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: var(--light-text-muted);
+}
+.footer-link {
+    color: var(--light-text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-link:hover {
+    color: var(--aurora-cyan);
+}
+footer h5 {
+    color: var(--light-text);
+}
+.social-icon {
+    color: var(--light-text-muted);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.social-icon:hover {
+    color: var(--aurora-cyan);
+    transform: translateY(-3px);
 }

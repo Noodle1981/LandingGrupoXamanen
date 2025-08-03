@@ -1,24 +1,21 @@
-// Espera a que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. Inicializar AOS (Animate On Scroll) - Sin cambios
+  
+  // 1. Inicializar AOS (Animate On Scroll)
   AOS.init({
     duration: 800,
     once: true,
     offset: 50,
   });
 
-  // 2. Actualizar dinámicamente el año en el footer - Sin cambios
+  // 2. Actualizar dinámicamente el año en el footer
   const yearSpan = document.getElementById("year");
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // 3. NAVEGACIÓN ACTIVA CON INTERSECTION OBSERVER (CORREGIDO)
+  // 3. NAVEGACIÓN ACTIVA CON INTERSECTION OBSERVER
   const sections = document.querySelectorAll("section[id]");
-  // Seleccionamos solo los enlaces que apuntan a una sección de la misma página
-  const navLinks = document.querySelectorAll(
-    '.navbar-nav .nav-link[href^="#"]'
-  );
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="#"]');
 
   if (sections.length > 0 && navLinks.length > 0) {
     const observerOptions = {
@@ -31,11 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const sectionId = entry.target.id;
-
           navLinks.forEach((link) => {
             link.classList.remove("active");
-            // CORRECCIÓN: Comparamos el href del link con el ID de la sección
-            // ej. link.getAttribute('href') es "#nosotros" y '#' + sectionId también es "#nosotros"
             if (link.getAttribute("href") === "#" + sectionId) {
               link.classList.add("active");
             }
@@ -49,74 +43,60 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 4. MANEJO DE FORMULARIOS REUTILIZABLE (MEJORADO)
-
-  /**
-   * Función genérica para manejar el envío de formularios de contacto.
-   * @param {string} formId - El ID del formulario a manejar.
-   * @param {string} feedbackId - El ID del elemento donde se mostrará el feedback.
-   */
-  const handleContactForm = (formId, feedbackId) => {
-    const form = document.getElementById(formId);
-    const feedbackEl = document.getElementById(feedbackId);
-
-    // Si el formulario no existe en la página actual, no hacemos nada.
-    if (!form || !feedbackEl) {
-      return;
-    }
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault(); // Prevenimos el envío tradicional
-
-      feedbackEl.textContent = "Enviando...";
-      feedbackEl.className = "mt-3"; // Resetea clases de color
-
-      // Simulamos una respuesta después de 1.5 segundos
-      setTimeout(() => {
-        const nameInput = form.querySelector('input[type="text"]');
-        const emailInput = form.querySelector('input[type="email"]');
-
-        // Validación simple
-        if (nameInput.value && emailInput.value && emailInput.checkValidity()) {
-          feedbackEl.textContent =
-            "¡Gracias! Nos pondremos en contacto contigo pronto.";
-          feedbackEl.style.color = "#198754"; // Verde de éxito
-          form.reset();
-        } else {
-          feedbackEl.textContent =
-            "Por favor, introduce un nombre y un email válido.";
-          feedbackEl.style.color = "#dc3545"; // Rojo de error
-        }
-      }, 1500);
-    });
-  };
+  // 4. INICIALIZAR PARTICLES.JS (CON NUEVOS COLORES)
   if (document.getElementById("particles-js")) {
     particlesJS("particles-js", {
-      // ... aquí va toda la configuración de las partículas ...
       particles: {
-        number: { value: 80 },
-        color: { value: "#C8BB8E" }, // El color coincide con tu paleta
+        number: { value: 60, density: { enable: true, value_area: 800 } },
+        color: { value: "#30eee2" }, // Color cyan neón de la paleta
         shape: { type: "circle" },
-        opacity: { value: 0.5, random: true },
-        size: { value: 3, random: true },
-        // Esta es la parte que crea las líneas
+        opacity: { value: 1.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+        size: { value: 7, random: true, anim: { enable: false } },
         line_linked: {
           enable: true,
           distance: 150,
-          color: "#C8BB8E", // Color de la línea
+          color: "#3c84ce", // Color azul de la paleta
           opacity: 0.4,
+          width: 1,
         },
-        move: { enable: true, speed: 2, direction: "none", out_mode: "out" },
+        move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out", bounce: false },
       },
       interactivity: {
+        detect_on: "canvas",
         events: {
           onhover: { enable: true, mode: "grab" },
           onclick: { enable: true, mode: "push" },
+          resize: true,
+        },
+        modes: {
+          grab: { distance: 140, line_opacity: 1 },
+          push: { particles_nb: 4 },
         },
       },
+      retina_detect: true,
     });
   }
-  // Aplicamos la función a TODOS los formularios que queramos manejar
-  handleContactForm("demo-form", "form-feedback"); // Para la página principal
-  handleContactForm("contact-form-agro", "form-feedback-agro"); // Para la página de Agro
+
+  // 5. EFECTO DE TIPEO EN EL TÍTULO DE CONTACTO
+  if (document.getElementById("contact-title")) {
+    new Typed('#contact-title', {
+      strings: ['Cuéntanos cómo podemos ayudarte.', 'Hablemos de tu próximo proyecto.', 'Inicia tu transformación digital.'],
+      typeSpeed: 50,
+      backSpeed: 25,
+      backDelay: 2000,
+      loop: true,
+      smartBackspace: true
+    });
+  }
+
+  // 6. ANIMACIÓN SECUENCIAL DEL TÍTULO HERO
+  const animatedTitle = document.querySelector('.animated-title');
+  if (animatedTitle) {
+    // La duración total de la animación es 9 segundos (3s para cada palabra)
+    // Le damos un pequeño margen antes de mostrar el título final.
+    setTimeout(() => {
+      animatedTitle.classList.add('finished');
+    }, 9000); // 9000 milisegundos = 9 segundos
+  }
+
 });
