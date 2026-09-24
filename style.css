@@ -1,409 +1,671 @@
 /* ===================================================================
-   GRUPO XAMANEN - DISEÑO "AURORA GLASS"
-   Concepto: Futurista, Tecnológico, Dinámico.
+   GRUPO XAMANEN - SISTEMA DE DISEÑO "AURORA GLASS 2.0"
+   Optimizado con UI/UX Pro Max:
+   - Glassmorphism refinado (iluminación óptica, Z-depth y bordes sutiles)
+   - Contraste WCAG 2.1 AA / AAA
+   - Microinteracciones con transiciones suaves (150-250ms cubic-bezier)
+   - Tipografía moderna fluida (Outfit + Plus Jakarta Sans)
+   - Accesibilidad: focus rings visibles y soporte para prefers-reduced-motion
 =================================================================== */
 
-/* ==================== 1. VARIABLES Y ESTILOS GLOBALES ==================== */
+/* ==================== 1. TOKENS Y VARIABLES ==================== */
 :root {
-    /* Paleta de Colores "Aurora" */
-    --aurora-purple: #65005E;
-    --aurora-blue: #3C84CE;
-    --aurora-cyan: #30EEE2;
-    --aurora-red-pop: #FF1919;
-    --dark-void: #0A0C10;
-    --light-text: #F0F2F5;
-    --light-text-muted: rgba(240, 242, 245, 0.7);
-
-    /* Estilos de Glassmorphism */
-    --glass-bg: rgba(18, 24, 39, 0.75);
-    --glass-blur: 10px;
-    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Paleta Aurora Tecnológica */
+    --aurora-purple: #4c1d95;
+    --aurora-indigo: #2563eb;
+    --aurora-blue: #0284c7;
+    --aurora-cyan: #06b6d4;
+    --aurora-cyan-neon: #30eee2;
+    --aurora-accent: #38bdf8;
     
-    /* Fuentes y Bordes */
-    --font-family-headings: 'Poppins', sans-serif;
-    --font-family-base: 'Inter', sans-serif;
-    --border-radius: 1rem; /* 16px */
+    /* Superficies y Fondos */
+    --bg-dark-void: #07090e;
+    --bg-surface: #0b111e;
+    --glass-bg: rgba(13, 21, 38, 0.72);
+    --glass-bg-hover: rgba(18, 28, 51, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-border-highlight: rgba(255, 255, 255, 0.22);
+    --glass-blur: 16px;
+
+    /* Textos con Contraste Accesible */
+    --text-pure: #ffffff;
+    --text-primary: #f1f5f9;
+    --text-muted: #94a3b8;
+    --text-subtle: #64748b;
+    --text-on-accent: #07090e;
+
+    /* Tipografía */
+    --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-base: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Radios y Sombras */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-pill: 9999px;
+    
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+    --shadow-glass-hover: 0 16px 40px 0 rgba(0, 0, 0, 0.6), 0 0 24px -4px rgba(48, 238, 226, 0.25);
+    --shadow-glow-cyan: 0 0 20px rgba(48, 238, 226, 0.35);
+
+    /* Transición estándar */
+    --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==================== 2. ESTILOS GLOBALES ==================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: var(--font-family-base);
-    color: var(--light-text);
-    line-height: 1.7;
-    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
-    /*background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);*/
-    animation: gradient 15s ease infinite;
-    background-size: 400% 400%;
-    background-attachment: fixed; /* 'fixed' es clave para que el glassmorphism funcione bien */
-}
-
-@keyframes gradient {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
+    font-family: var(--font-base);
+    color: var(--text-primary);
+    background-color: var(--bg-dark-void);
+    line-height: 1.65;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    
+    /* Gradiente Aurora Refinado con Capas Suaves */
+    background-image: 
+        radial-gradient(circle at 15% 20%, rgba(76, 29, 149, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(2, 132, 199, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 50% 80%, rgba(6, 182, 212, 0.2) 0%, transparent 60%),
+        linear-gradient(180deg, #07090e 0%, #0a1120 50%, #07090e 100%);
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family-headings);
-    color: var(--light-text);
+    font-family: var(--font-heading);
+    color: var(--text-pure);
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.02em;
 }
 
-.section-title {
-    font-size: clamp(2.2rem, 5vw, 3rem);
+p {
     margin-bottom: 1rem;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-.lead {
-    color: var(--light-text-muted);
-    font-weight: 400;
+a, button {
+    cursor: pointer;
 }
 
-/* ==================== 2. COMPONENTE CLAVE: GLASS PANEL ==================== */
+.text-cyan {
+    color: var(--aurora-cyan-neon) !important;
+}
+
+.text-primary-custom {
+    color: var(--aurora-cyan-neon) !important;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+}
+
+.text-light-muted {
+    color: var(--text-muted) !important;
+}
+
+.text-muted-custom {
+    color: var(--text-muted);
+}
+
+.tracking-wider {
+    letter-spacing: 0.1em;
+}
+
+/* ==================== 3. COMPONENTE CLAVE: GLASS PANEL ==================== */
 .glass-panel {
     background: var(--glass-bg);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
-    border-radius: var(--border-radius);
-    border: var(--glass-border);
-    padding: 2.5rem;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    transition: all 0.3s ease;
+    border: 1px solid var(--glass-border);
+    border-top: 1px solid var(--glass-border-highlight);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem;
+    box-shadow: var(--shadow-glass);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-panel:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: var(--shadow-glass-hover);
 }
 
 @media (max-width: 767px) {
     .glass-panel {
         padding: 1.5rem;
+        border-radius: var(--radius-md);
     }
 }
 
-/* ==================== 3. HEADER / NAVEGACIÓN ==================== */
+/* ==================== 4. HEADER & NAVBAR ==================== */
 .navbar {
-    background: var(--glass-bg) !important;
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border-bottom: var(--glass-border);
+    background: rgba(7, 9, 14, 0.82) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.75rem 0;
+    transition: var(--transition-smooth);
+    z-index: 1030;
 }
 
-.navbar .nav-link {
-    font-weight: 600;
-    color: var(--light-text-muted);
-    transition: color 0.3s ease;
-}
-
-.navbar .nav-link:hover, .navbar .nav-link.active {
-    color: var(--light-text);
-}
-
-.navbar-toggler {
-    border-color: rgba(255,255,255,0.2);
-}
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-.dropdown-menu {
-    background: var(--dark-void);
-    border: var(--glass-border);
-    border-radius: var(--border-radius);
-}
-
-.dropdown-item {
-    color: var(--light-text-muted);
-}
-.dropdown-item:hover {
-    background: var(--glass-bg);
-    color: var(--light-text);
+.brand-logo {
+    max-height: 38px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-text {
-    /* Estilo de la fuente */
-    font-family: var(--font-family-headings);
-    font-size: 1.5rem; /* Ajusta el tamaño*/
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
     font-weight: 700;
-    letter-spacing: 1px;
-    
-    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-
-    /* recorte de el fondo a la forma del texto */
-    -webkit-background-clip: text;
-    background-clip: text;
-    
-    /* el color del texto transparente para que se vea el fondo */
-    color: transparent;
+    color: var(--text-pure);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    transition: var(--transition-smooth);
 }
 
-/* ==================== 4. SECCIÓN HERO & PARTICLES ==================== */
+.logo-text:hover {
+    color: var(--aurora-cyan-neon);
+}
+
+.navbar .nav-link {
+    font-family: var(--font-base);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 0.5rem 0.85rem !important;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-smooth);
+}
+
+.navbar .nav-link:hover, 
+.navbar .nav-link.active {
+    color: var(--text-pure);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 0.65rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 2px var(--aurora-cyan-neon);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.glass-dropdown {
+    background: rgba(11, 17, 30, 0.95) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem;
+    min-width: 250px;
+}
+
+.glass-dropdown .dropdown-item {
+    color: var(--text-primary);
+    padding: 0.65rem 0.85rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-smooth);
+}
+
+.glass-dropdown .dropdown-item:hover {
+    background: rgba(48, 238, 226, 0.12);
+    color: var(--aurora-cyan-neon);
+}
+
+.btn-nav-cta {
+    background: linear-gradient(135deg, var(--aurora-blue), var(--aurora-cyan));
+    color: var(--text-on-accent) !important;
+    border: none;
+    transition: var(--transition-smooth);
+    box-shadow: 0 2px 10px rgba(6, 182, 212, 0.3);
+}
+
+.btn-nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 18px rgba(48, 238, 226, 0.5);
+    color: var(--text-on-accent) !important;
+}
+
+/* ==================== 5. HERO SECTION ==================== */
 .hero-section {
-    position: relative;
-    height: 60vh;
-    min-height: 500px;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: var(--light-text);
+    padding: 120px 0 80px 0;
+    position: relative;
 }
 
 #particles-js {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    top: 0; left: 0;
     z-index: 1;
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    max-width: 900px;
 }
 
-.text-primary-custom {
-    color: var(--aurora-cyan) !important;
+.hero-badge-wrapper {
+    display: inline-block;
 }
 
-/* ==================== 4B. ANIMACIÓN DE TÍTULO HERO ==================== */
+.badge-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--aurora-cyan-neon);
+    background: rgba(48, 238, 226, 0.08);
+    border: 1px solid rgba(48, 238, 226, 0.25);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 0 15px rgba(48, 238, 226, 0.12);
+}
+
+.hero-title {
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--text-pure);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-subtitle {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 760px;
+    font-weight: 400;
+}
+
+/* Animación secuencial Hero */
 .animated-title span {
-    display: inline-block; /* Necesario para aplicar transformaciones */
-    opacity: 0; /* Inicialmente, todas las palabras son invisibles */
-    animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
+    display: inline-block;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 
-/* Animación para la primera palabra: Aparece y se va */
 .animated-title .word-1 {
     animation: fadeInOut 3s ease-in-out forwards;
 }
 
-/* Animación para la segunda palabra: Aparece y se va, pero empieza más tarde */
 .animated-title .word-2 {
-    animation: fadeInOut 3s ease-in-out 3s forwards; /* Inicia después de 3s */
+    animation: fadeInOut 3s ease-in-out 3s forwards;
 }
 
-/* Animación para la tercera palabra: Aparece y se va, pero empieza aún más tarde */
 .animated-title .word-3 {
-    animation: fadeInOut 3s ease-in-out 6s forwards; /* Inicia después de 6s */
+    animation: fadeInOut 3s ease-in-out 6s forwards;
 }
 
-/* Keyframes para la animación de entrada y salida */
 @keyframes fadeInOut {
     0% {
         opacity: 0;
-        transform: translateY(40px) scale(0.9);
+        transform: translateY(30px) scale(0.92);
     }
-    20%, 80% { /* Se mantiene visible durante este periodo */
+    20%, 80% {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
     100% {
         opacity: 0;
-        transform: translateY(-40px) scale(0.9);
+        transform: translateY(-30px) scale(0.92);
     }
 }
 
-/* Después de que terminen las animaciones individuales, mostramos el título completo */
-.animated-title:hover span, /* Opcional: mostrar todo al pasar el ratón */
 .animated-title.finished span {
-    animation: none; /* Quitamos las animaciones individuales */
+    animation: none;
     opacity: 1;
     transform: none;
 }
 
-/* ==================== 5. SECCIONES Y CONTENIDO ==================== */
+/* Botones Hero */
+.btn-primary-custom {
+    background: linear-gradient(135deg, #0284c7 0%, #30eee2 100%);
+    color: var(--text-on-accent);
+    border: none;
+    font-weight: 700;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 18px rgba(48, 238, 226, 0.35);
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(48, 238, 226, 0.55);
+    color: var(--text-on-accent);
+}
+
+.btn-outline-custom {
+    background: rgba(48, 238, 226, 0.05);
+    color: var(--aurora-cyan-neon);
+    border: 1px solid var(--aurora-cyan-neon);
+    transition: var(--transition-smooth);
+}
+
+.btn-outline-custom:hover {
+    background: var(--aurora-cyan-neon);
+    color: var(--text-on-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(48, 238, 226, 0.4);
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-pure);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(8px);
+    transition: var(--transition-smooth);
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: var(--text-pure);
+    border-color: var(--glass-border-highlight);
+    transform: translateY(-3px);
+}
+
+/* ==================== 6. STRIP DE CLIENTES ==================== */
+.clients-strip {
+    background: rgba(7, 9, 14, 0.6);
+}
+
+.client-logo-img {
+    max-height: 38px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(1) brightness(1.2);
+    opacity: 0.7;
+    transition: var(--transition-smooth);
+}
+
+.client-logo-img:hover {
+    filter: grayscale(0) brightness(1);
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+/* ==================== 7. SECCIONES Y ENCABEZADOS ==================== */
 section {
-    padding: 100px 0;
+    padding: 90px 0;
     position: relative;
 }
 
+.section-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: var(--text-pure);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+}
+
+.lead {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Tarjetas de Capacidades */
 .partner-feature-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 2rem 1.5rem;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 1.9rem;
-    height: 100%;
 }
+
+.partner-feature-box:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(48, 238, 226, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
 .partner-feature-box .icon-wrapper {
-    font-size: 2.5rem;
-    color: var(--aurora-cyan);
-    margin-bottom: 1rem;
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-md);
+    background: radial-gradient(circle, rgba(48, 238, 226, 0.15) 0%, rgba(2, 132, 199, 0.05) 100%);
+    border: 1px solid rgba(48, 238, 226, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: var(--aurora-cyan-neon);
+    margin-bottom: 1.25rem;
+    transition: var(--transition-smooth);
 }
+
+.partner-feature-box:hover .icon-wrapper {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow-cyan);
+}
+
 .partner-feature-box h4 {
-    color: var(--light-text);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-pure);
 }
+
 .partner-feature-box p {
-    color: var(--light-text-muted);
+    font-size: 0.925rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
 }
 
-/* ==================== 6. SOLUCIONES (FEATURE GRID) ==================== */
-.solution-visual {
-    text-align: center;
-    padding: 2rem;
-}
-
-.solution-icon {
-    font-size: 6rem; /* Icono principal enorme */
-    color: var(--aurora-cyan);
-    text-shadow: 0 0 25px rgba(48, 238, 226, 0.6);
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.solution-visual h3 {
-    font-size: 2rem;
-    color: var(--light-text);
-}
-
-.solution-visual .lead {
-    color: var(--light-text-muted);
-    margin-bottom: 0.5rem;
-}
-
-/*.partner-logo {  Descomenta esta regla si usas imágenes de logos */
-    /* max-width: 180px;
-    filter: brightness(0) invert(1) opacity(0.8); 
-    margin-top: 1rem; 
-} */
-
-/* Ajuste para que la lista dentro del panel de vidrio se vea bien */
-.glass-panel .service-list {
-    columns: 1; /* Forzamos una sola columna para mayor claridad en este layout */
-}
-
-
-/* ==================== 9. EXPERTISE TABS ==================== */
-.nav-pills .nav-link {
-    padding: 12px 25px;
-    font-weight: 600;
-    color: var(--light-text-muted);
-    border-radius: 50px;
-    background-color: rgba(18, 24, 39, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 0 5px 10px;
-    transition: all 0.3s ease;
-}
-
-.nav-pills .nav-link:hover {
-    background-color: rgba(18, 24, 39, 0.7);
-    color: var(--light-text);
-}
-
-.nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
-    background: linear-gradient(90deg, var(--aurora-blue), var(--aurora-cyan));
-    color: var(--dark-void);
-    border-color: transparent;
-    box-shadow: 0 0 20px rgba(48, 238, 226, 0.5);
-    transform: translateY(-2px);
-}
-
+/* ==================== 8. LISTAS DE SERVICIO ==================== */
 .service-list {
     list-style: none;
     padding-left: 0;
-    margin-top: 1.5rem;
-    columns: 2; /* Mantenemos el formato de dos columnas */
-    column-gap: 2rem;
+    margin-bottom: 0;
 }
 
 .service-list li {
-    padding-left: 1.8rem;
     position: relative;
+    padding-left: 1.75rem;
     margin-bottom: 0.75rem;
-    color: var(--light-text-muted);
-    break-inside: avoid;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
 }
 
-/* El checkmark ahora brilla con el color cyan neón */
 .service-list li::before {
-    content: '\f058';
+    content: '\f00c';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
-    color: var(--aurora-cyan);
+    color: var(--aurora-cyan-neon);
     position: absolute;
     left: 0;
-    top: 5px;
-    font-size: 1.1rem;
-    text-shadow: 0 0 8px rgba(48, 238, 226, 0.7);
+    top: 2px;
+    font-size: 0.9rem;
 }
 
-@media (max-width: 767px) {
-    .service-list {
-        columns: 1; /* En móviles, usamos una sola columna */
+.service-list li strong {
+    color: var(--text-primary);
+}
+
+.border-start-lg {
+    border-left: none;
+}
+
+@media (min-width: 992px) {
+    .border-start-lg {
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
 
-/* ==================== 7. FORMULARIO DE CONTACTO ==================== */
-#contact-title {
-    font-weight: 700;
-    min-height: 90px; /* Espacio para el efecto de tipeo */
+/* Badges de producto */
+.bg-primary-custom {
+    background: rgba(48, 238, 226, 0.15) !important;
+    color: var(--aurora-cyan-neon) !important;
+    border: 1px solid rgba(48, 238, 226, 0.3);
 }
 
+.bg-secondary-custom {
+    background: rgba(37, 99, 235, 0.2) !important;
+    color: #93c5fd !important;
+    border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+/* ==================== 9. SOLUCIONES Y VISUALES ==================== */
+.solution-visual {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+}
+
+.solution-icon {
+    font-size: 4.5rem;
+    color: var(--aurora-cyan-neon);
+    text-shadow: 0 0 30px rgba(48, 238, 226, 0.4);
+}
+
+.partner-logo-mini {
+    max-height: 26px;
+    width: auto;
+    border-radius: 4px;
+}
+
+/* ==================== 10. FORMULARIO DE CONTACTO ==================== */
 .form-label {
-    color: var(--light-text-muted);
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
 }
+
 .form-control, .form-select {
-    background-color: rgba(0,0,0,0.2);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: var(--light-text);
+    background-color: rgba(7, 9, 14, 0.65);
+    border: 1px solid var(--glass-border);
+    color: var(--text-pure);
     padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
 }
+
 .form-control:focus, .form-select:focus {
-    background-color: rgba(0,0,0,0.3);
-    color: var(--light-text);
-    border-color: var(--aurora-cyan);
-    box-shadow: 0 0 10px rgba(48, 238, 226, 0.3);
+    background-color: rgba(11, 17, 30, 0.85);
+    color: var(--text-pure);
+    border-color: var(--aurora-cyan-neon);
+    box-shadow: 0 0 0 3px rgba(48, 238, 226, 0.2);
+    outline: none;
 }
+
 .form-control::placeholder {
-    color: rgba(255,255,255,0.3);
+    color: var(--text-subtle);
+}
+
+.form-select option {
+    background-color: var(--bg-surface);
+    color: var(--text-pure);
 }
 
 .btn-submit {
-    background: linear-gradient(90deg, var(--aurora-blue), var(--aurora-cyan));
+    background: linear-gradient(135deg, var(--aurora-blue) 0%, var(--aurora-cyan-neon) 100%);
     border: none;
-    color: var(--dark-void);
-    font-weight: 700;
-    padding: 12px 30px;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-}
-.btn-submit:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(48, 238, 226, 0.4);
-}
-.form-check-label {
-    font-size: 0.9rem;
-    color: var(--light-text-muted);
-}
-.form-text {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-on-accent);
+    font-size: 1.05rem;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 20px rgba(48, 238, 226, 0.35);
 }
 
-/* ==================== 8. FOOTER ==================== */
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(48, 238, 226, 0.55);
+    color: var(--text-on-accent);
+}
+
+.form-check-input:checked {
+    background-color: var(--aurora-cyan-neon);
+    border-color: var(--aurora-cyan-neon);
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 2px rgba(48, 238, 226, 0.35);
+}
+
+/* ==================== 11. FOOTER ==================== */
 footer {
-    background-color: var(--dark-void);
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: var(--light-text-muted);
+    background-color: rgba(5, 7, 11, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
+
 .footer-link {
-    color: var(--light-text-muted);
+    color: var(--text-muted);
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
 }
+
 .footer-link:hover {
-    color: var(--aurora-cyan);
+    color: var(--aurora-cyan-neon);
+    transform: translateX(3px);
+    display: inline-block;
 }
-footer h5 {
-    color: var(--light-text);
-}
+
 .social-icon {
-    color: var(--light-text-muted);
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    text-decoration: none;
+    transition: var(--transition-smooth);
 }
+
 .social-icon:hover {
-    color: var(--aurora-cyan);
+    background: rgba(48, 238, 226, 0.15);
+    color: var(--aurora-cyan-neon);
+    border-color: rgba(48, 238, 226, 0.3);
     transform: translateY(-3px);
+}
+
+/* ==================== 12. ACCESIBILIDAD & REDUCED MOTION ==================== */
+:focus-visible {
+    outline: 2px solid var(--aurora-cyan-neon);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .animated-title span {
+        opacity: 1 !important;
+        animation: none !important;
+        transform: none !important;
+    }
 }

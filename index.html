@@ -4,18 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo Xamanen | Soluciones Tecnológicas de Vanguardia</title>
+    <title>Grupo Xamanen | Software a Medida, IA, Minería y Plataformas HSE</title>
     <meta name="description"
-        content="Impulsa tu negocio con soluciones futuristas. Desarrollo a medida, eficiencia energética y transformación digital con Grupo Xamanen.">
+        content="Grupo Xamanen: Soluciones tecnológicas de vanguardia desde San Juan. Desarrollo de software a medida, capacitaciones en IA, plataforma HSE XamaSafe y XamaStudio LMS.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Libraries -->
@@ -32,33 +29,53 @@
     <!-- ==================== HEADER ==================== -->
     <header class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand logo-text" href="#">
-                Grupo Xamanen
+            <a class="navbar-brand logo-text d-flex align-items-center gap-2" href="#">
+                <img src="./img/logoxamanen.png" alt="Logo Grupo Xamanen" class="brand-logo" onerror="this.style.display='none'">
+                <span>Grupo Xamanen</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#soluciones">Soluciones</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                    
-                    <!-- BORRAR SI NO VA A VER ACESSOS 
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="#capacidades">Capacidades</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPlataformas" role="button"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarPlataformas" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Accesos
+                            Plataformas
                         </a>
-                          <ul class="dropdown-menu" aria-labelledby="navbarDropdownPlataformas">
-                            <li><a class="dropdown-item" href="https://segop.milaulas.com/" target="_blank">
-                                    <i class="fas fa-graduation-cap me-2"></i>Acceso SegOp</a></li>
-                            <li><a class="dropdown-item" href="https://equipopreventivo.com.ar/" target="_blank">
-                                    <i class="fas fa-sign-in-alt me-2"></i>Acceso EP</a></li>
+                        <ul class="dropdown-menu dropdown-menu-dark glass-dropdown" aria-labelledby="navbarPlataformas">
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center gap-2" href="https://xamasafe.com/login" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-shield-halved text-cyan"></i>
+                                    <div>
+                                        <div class="fw-semibold">XamaSafe (HSE)</div>
+                                        <small class="text-muted-custom">Higiene, Seguridad y Ambiente</small>
+                                    </div>
+                                    <i class="fas fa-external-link-alt ms-auto small text-muted-custom"></i>
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider border-secondary opacity-25"></li>
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center gap-2" href="#plataformas">
+                                    <i class="fas fa-graduation-cap text-cyan"></i>
+                                    <div>
+                                        <div class="fw-semibold">XamaStudio (LMS)</div>
+                                        <small class="text-muted-custom">Campus & Capacitación en IA</small>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
-                     -->
+                    <li class="nav-item"><a class="nav-link" href="#soluciones">Soluciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mineria">Minería & Ambiente</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-sm btn-nav-cta px-3 py-2 rounded-pill fw-semibold" href="#contacto">
+                            <i class="fas fa-paper-plane me-1"></i> Hablemos
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -67,76 +84,111 @@
     <main>
 
         <!-- ==================== HERO SECTION ==================== -->
-        <section id="hero" class="hero-section">
+        <section id="hero" class="hero-section position-relative overflow-hidden">
             <div id="particles-js"></div>
-            <div class="container hero-content" data-aos="fade-up">
-                <span class="text-primary-custom fw-bold text-uppercase">Impulso Estratégico</span>
+            <div class="container hero-content text-center" data-aos="fade-up">
+                <div class="hero-badge-wrapper mb-3" data-aos="fade-down" data-aos-delay="100">
+                    <span class="badge-tag">
+                        <i class="fas fa-microchip me-1"></i> Tecnología & Innovación Estratégica · San Juan
+                    </span>
+                </div>
                 <h1 class="hero-title display-3 mt-2 animated-title">
                     <span class="word-1">Evoluciona.</span>
                     <span class="word-2">Automatiza.</span>
                     <span class="word-3">Lidera.</span>
                 </h1>
-                <p class="lead">Repensamos tus procesos e integramos tecnología para construir ventajas
-                    competitivas duraderas.</p>
+                <p class="lead mx-auto hero-subtitle mt-3">
+                    Desarrollo de software a medida, capacitaciones empresariales en Inteligencia Artificial y soluciones tecnológicas estratégicas para Minería, Industria y Medio Ambiente.
+                </p>
+                <div class="hero-cta-group mt-4 d-flex justify-content-center gap-3 flex-wrap" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#capacidades" class="btn btn-primary-custom px-4 py-3 rounded-pill fw-semibold">
+                        <i class="fas fa-compass me-2"></i>Explorar Soluciones
+                    </a>
+                    <a href="https://xamasafe.com/login" target="_blank" rel="noopener noreferrer" class="btn btn-outline-custom px-4 py-3 rounded-pill fw-semibold">
+                        <i class="fas fa-shield-alt me-2"></i>Acceso XamaSafe
+                    </a>
+                    <a href="#contacto" class="btn btn-glass px-4 py-3 rounded-pill fw-semibold">
+                        <i class="fas fa-comments me-2"></i>Hablemos
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- ==================== PARTNERS SECTION ==================== -->
-        <section id="partners" class="py-5">
+        <!-- ==================== CLIENTES / SOCIAL PROOF ==================== -->
+        <section class="clients-strip py-4 border-top border-bottom border-light border-opacity-10">
+            <div class="container">
+                <p class="text-center text-uppercase small text-muted-custom fw-bold mb-3 tracking-wider">
+                    Empresas y organizaciones que confían en nuestras soluciones
+                </p>
+                <div class="d-flex justify-content-center align-items-center flex-wrap gap-4 gap-md-5 client-logos-grid opacity-75">
+                    <img src="./img/logos/agrorawson.JPG" alt="Agro Rawson" class="client-logo-img">
+                    <img src="./img/logos/ausonia.JPG" alt="Ausonia" class="client-logo-img">
+                    <img src="./img/logos/iscot.JPG" alt="Iscot" class="client-logo-img">
+                    <img src="./img/logos/servifood.JPG" alt="Servifood" class="client-logo-img">
+                    <img src="./img/logos/terratest.JPG" alt="Terratest" class="client-logo-img">
+                    <img src="./img/logos/peraltahermanos.JPG" alt="Peralta Hermanos" class="client-logo-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CAPACIDADES (RESUMEN DE IMPACTO) ==================== -->
+        <section id="capacidades" class="py-5">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
-                    <span class="text-primary-custom fw-bold text-uppercase">Conviértete en Nuestro Partner</span>
-                    <h2 class="section-title mt-2">Tecnología sin Complejidad</h2>
-                    <p class="lead mx-auto" style="max-width: 800px;">Nosotros nos encargamos del desarrollo,
-                        mantenimiento y soporte. Tú te llevas el crédito con tus clientes.</p>
+                    <span class="text-primary-custom fw-bold text-uppercase">Nuestras Capacidades Clave</span>
+                    <h2 class="section-title mt-2">Tecnología Aplicada al Crecimiento Real</h2>
+                    <p class="lead mx-auto" style="max-width: 800px;">
+                        Integramos desarrollo propio, formación de vanguardia y plataformas especializadas para resolver desafíos complejos en empresas e industrias clave.
+                    </p>
                 </div>
-                <div class="glass-panel" data-aos="fade-up" data-aos-delay="200">
+                <div class="glass-panel" data-aos="fade-up" data-aos-delay="150">
                     <div class="row g-4">
+                        <!-- Card 1 -->
                         <div class="col-lg-4 col-md-6">
-                            <div class="partner-feature-box">
-                                <div class="icon-wrapper"><i class="fas fa-rocket"></i></div>
-                                <h4>Tecnología y Diseño Web</h4>
-                                <p>Branding, landing pages y webs para empresas que buscan impactar con nuevas
-                                    tecnologías.</p>
+                            <div class="partner-feature-box h-100">
+                                <div class="icon-wrapper"><i class="fas fa-laptop-code"></i></div>
+                                <h4>Software a Medida</h4>
+                                <p>Desarrollo de aplicaciones web y móviles para digitalizar flujos operativos, trazabilidad de datos y procesos críticos de tu empresa.</p>
                             </div>
                         </div>
+                        <!-- Card 2 -->
                         <div class="col-lg-4 col-md-6">
-                            <div class="partner-feature-box">
-                                <div class="icon-wrapper"><i class="fas fa-headset"></i></div>
-                                <h4>Soporte y Ventas</h4>
-                                <p>Te formamos a ti y a tu equipo para potenciar tus ventas con nuestros servicios
-                                    integrados.</p>
+                            <div class="partner-feature-box h-100">
+                                <div class="icon-wrapper"><i class="fas fa-brain"></i></div>
+                                <h4>Capacitaciones en IA</h4>
+                                <p>Entrenamos a tus colaboradores para utilizar herramientas de Inteligencia Artificial práctica en su día a día, potenciando la productividad de cualquier sector.</p>
                             </div>
                         </div>
+                        <!-- Card 3 -->
                         <div class="col-lg-4 col-md-6">
-                            <div class="partner-feature-box">
-                                <div class="icon-wrapper"><i class="fas fa-bullseye"></i></div>
-                                <h4>CRM y Prospección</h4>
-                                <p>Nuestro equipo prospecta y pacta reuniones para vender tus productos.</p>
+                            <div class="partner-feature-box h-100">
+                                <div class="icon-wrapper"><i class="fas fa-shield-heart"></i></div>
+                                <h4>XamaSafe · Plataforma HSE</h4>
+                                <p>Nuestra plataforma para la gestión inteligente de Higiene, Seguridad y Medio Ambiente. Control de contratistas, matrices y normas ISO.</p>
                             </div>
                         </div>
+                        <!-- Card 4 -->
                         <div class="col-lg-4 col-md-6">
-                            <div class="partner-feature-box">
-                                <div class="icon-wrapper"><i class="fas fa-shopping-cart"></i></div>
-                                <h4>E-commerce</h4>
-                                <p>Creamos tu tienda online con un modelo de comisiones por venta, minimizando tu
-                                    inversión inicial.</p>
+                            <div class="partner-feature-box h-100">
+                                <div class="icon-wrapper"><i class="fas fa-chalkboard-user"></i></div>
+                                <h4>XamaStudio · LMS Propio</h4>
+                                <p>Campus virtual educativo para impartir capacitaciones continuas, seguimiento del progreso de colaboradores y emisión de certificados.</p>
                             </div>
                         </div>
+                        <!-- Card 5 -->
                         <div class="col-lg-4 col-md-6">
-                            <div class="partner-feature-box">
-                                <div class="icon-wrapper"><i class="fas fa-chalkboard-teacher"></i></div>
-                                <h4>Software Educativo (LMS)</h4>
-                                <p>Desarrollamos tu Moodle para que ofrezcas capacitaciones virtuales y mejores tu
-                                    propuesta de valor.</p>
+                            <div class="partner-feature-box h-100">
+                                <div class="icon-wrapper"><i class="fas fa-mountain"></i></div>
+                                <h4>Minería & Industria</h4>
+                                <p>Soluciones tecnológicas y desarrollo a medida concebidos para los altos estándares de faenas mineras, logística de campo y plantas industriales.</p>
                             </div>
                         </div>
+                        <!-- Card 6 -->
                         <div class="col-lg-4 col-md-6">
-                            <div class="partner-feature-box">
-                                <div class="icon-wrapper"><i class="fas fa-store"></i></div>
-                                <h4>Marketplace de Productos</h4>
-                                <p>Unimos fuerzas con otros emprendedores para crear un marketplace y potenciar las
-                                    ventas conjuntas.</p>
+                            <div class="partner-feature-box h-100">
+                                <div class="icon-wrapper"><i class="fas fa-chart-line"></i></div>
+                                <h4>CRM & Prospección B2B</h4>
+                                <p>Implementación de procesos comerciales estructurados, prospección calificada y automatizaciones para escalar las ventas corporativas.</p>
                             </div>
                         </div>
                     </div>
@@ -144,164 +196,199 @@
             </div>
         </section>
 
-        <!-- ==================== EXPERTISE (TABS) ==================== -->
-        <section id="expertise" class="py-5">
+        <!-- ==================== PLATAFORMAS PROPIAS ==================== -->
+        <section id="plataformas" class="py-5">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
-                    <span class="text-primary-custom fw-bold text-uppercase">Capacidades Fundamentales en higiene,
-                        seguridad y medio ambiente</span>
-                    <h2 class="section-title mt-2">Plataforma HSE 2.0 </h2>
-                    <p class="lead mx-auto" style="max-width: 800px;">Dominamos las disciplinas clave para una
-                        transformación integral y sostenible de tu organización.</p>
+                    <span class="text-primary-custom fw-bold text-uppercase">Ecosistema Propietario</span>
+                    <h2 class="section-title mt-2">Plataformas Xamanen</h2>
+                    <p class="lead mx-auto" style="max-width: 800px;">
+                        Herramientas diseñadas por nosotros para digitalizar la seguridad laboral y la transferencia de conocimiento continuo en las organizaciones.
+                    </p>
                 </div>
 
-                <!-- Tabs de Navegación "Neon Pills" -->
-                <ul class="nav nav-pills justify-content-center mb-5" id="services-tab" role="tablist"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="hys-tab" data-bs-toggle="pill" data-bs-target="#hys-content"
-                            type="button" role="tab" aria-controls="hys-content" aria-selected="true">
-                            <i class="fas fa-hard-hat me-2"></i>Higiene y Seguridad
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="rrhh-tab" data-bs-toggle="pill" data-bs-target="#rrhh-content"
-                            type="button" role="tab" aria-controls="rrhh-content" aria-selected="false">
-                            <i class="fas fa-users me-2"></i>Recursos Humanos
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="ma-tab" data-bs-toggle="pill" data-bs-target="#ma-content"
-                            type="button" role="tab" aria-controls="ma-content" aria-selected="false">
-                            <i class="fas fa-leaf me-2"></i>Medio Ambiente
-                        </button>
-                    </li>
-                </ul>
+                <div class="row g-4 align-items-stretch">
+                    <!-- XamaSafe Card -->
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                        <div class="glass-panel h-100 d-flex flex-column justify-content-between p-4 p-md-5">
+                            <div>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <span class="badge bg-primary-custom px-3 py-2 rounded-pill fw-semibold">HSE 2.0</span>
+                                    <i class="fas fa-shield-halved text-cyan fs-2"></i>
+                                </div>
+                                <h3 class="h2 fw-bold text-white mb-3">XamaSafe</h3>
+                                <p class="lead text-light-muted">
+                                    Plataforma integral para la gestión y digitalización de <strong>Higiene, Seguridad y Medio Ambiente</strong> en el ámbito laboral e industrial.
+                                </p>
+                                <ul class="service-list mt-4">
+                                    <li>Gestión preventiva y matrices de riesgo en tiempo real.</li>
+                                    <li>Control de empresas contratistas, documentación y compra de EPP.</li>
+                                    <li>Investigación ágil de incidentes y reporte estadístico de accidentes.</li>
+                                    <li>Acompañamiento y cumplimiento de certificaciones ISO 45001 y normativas SRT.</li>
+                                </ul>
+                            </div>
+                            <div class="mt-4 pt-3 border-top border-light border-opacity-10 d-flex flex-wrap gap-3 align-items-center">
+                                <a href="https://xamasafe.com/login" target="_blank" rel="noopener noreferrer" class="btn btn-primary-custom px-4 py-2 rounded-pill fw-semibold">
+                                    <i class="fas fa-sign-in-alt me-2"></i>Ingresar a XamaSafe
+                                </a>
+                                <a href="#contacto" class="btn btn-outline-light btn-sm px-3 py-2 rounded-pill">
+                                    Solicitar Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Contenido de los Tabs en Glass Panels -->
-                <div class="tab-content" id="services-tab-content">
-                    <!-- Higiene y Seguridad -->
-                    <div class="tab-pane fade show active" id="hys-content" role="tabpanel" aria-labelledby="hys-tab"
-                        data-aos="fade-up" data-aos-delay="200">
-                        <div class="glass-panel">
-                            <p class="lead">Asistimos a nuestros clientes en la prevención de riesgos, en post del
-                                cuidado y la preservación de la seguridad y la salud de los trabajadores.</p>
-                            <ul class="service-list">
-                                <li>Asesoría para certificación ISO 45001:2018</li>
-                                <li>Gestión de Higiene y Seguridad (Planes, Matrices, Procedimientos)</li>
-                                <li>Investigación de accidentes y enfermedades profesionales</li>
-                                <li>Capacitación y entrenamiento de personal</li>
-                                <li>Mediciones según resolución SRT</li>
-                                <li>Control de empresas contratistas y compra de EPP</li>
-                            </ul>
+                    <!-- XamaStudio Card -->
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                        <div class="glass-panel h-100 d-flex flex-column justify-content-between p-4 p-md-5">
+                            <div>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <span class="badge bg-secondary-custom px-3 py-2 rounded-pill fw-semibold">LMS & IA</span>
+                                    <i class="fas fa-graduation-cap text-cyan fs-2"></i>
+                                </div>
+                                <h3 class="h2 fw-bold text-white mb-3">XamaStudio</h3>
+                                <p class="lead text-light-muted">
+                                    Nuestro campus LMS diseñado para dictar <strong>capacitaciones empresariales en Inteligencia Artificial</strong> y programas de formación interna.
+                                </p>
+                                <ul class="service-list mt-4">
+                                    <li>Capacitaciones corporativas para enseñar a usar herramientas de IA en cada área.</li>
+                                    <li>Estructura modular para cursos con seguimiento de progreso y evaluaciones.</li>
+                                    <li>Emisión automatizada de certificados y métricas de desempeño.</li>
+                                    <li>Personalización completa para la propuesta de valor de tu empresa.</li>
+                                </ul>
+                            </div>
+                            <div class="mt-4 pt-3 border-top border-light border-opacity-10 d-flex flex-wrap gap-3 align-items-center">
+                                <a href="#contacto" class="btn btn-primary-custom px-4 py-2 rounded-pill fw-semibold">
+                                    <i class="fas fa-chalkboard-teacher me-2"></i>Consultar por Capacitaciones
+                                </a>
+                                <span class="small text-muted-custom">Disponible para empresas de todo el país</span>
+                            </div>
                         </div>
                     </div>
-                    <!-- Recursos Humanos -->
-                    <div class="tab-pane fade" id="rrhh-content" role="tabpanel" aria-labelledby="rrhh-tab"
-                        data-aos="fade-up">
-                        <div class="glass-panel">
-                            <p class="lead">Nos aseguramos que su empresa cuente con el colaborador indicado para la
-                                obtención de los objetivos de la organización.</p>
-                            <ul class="service-list">
-                                <li>Provisión de talentos (Reclutamiento y Selección)</li>
-                                <li>Gestión de talentos (Coaching de líderes, Capacitación)</li>
-                                <li>Administración de RRHH (Implementación de procesos, legajos)</li>
-                                <li>Digitalización y archivo de legajos</li>
-                                <li>Descripción de puestos y actualización de nóminas</li>
-                                <li>Gestión de ART</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Medio Ambiente -->
-                    <div class="tab-pane fade" id="ma-content" role="tabpanel" aria-labelledby="ma-tab"
-                        data-aos="fade-up">
-                        <div class="glass-panel">
-                            <p class="lead">Brindamos servicios en materia ambiental orientada al cumplimiento legal y a
-                                nuestra responsabilidad como ciudadanos.</p>
-                            <ul class="service-list">
-                                <li>Desarrollo de Planes de Gestión Ambiental</li>
-                                <li>Estudios de Impacto Ambiental</li>
-                                <li>Auditorías y matriz de cumplimiento legal</li>
-                                <li>Estudios de agua, suelo y aire</li>
-                                <li>Programa de capacitación ambiental</li>
-                                <li>Trámites y habilitaciones ante entes reguladores</li>
-                            </ul>
-                        </div>
-                    </div>
-                
-                
                 </div>
             </div>
         </section>
 
-                <!-- ==================== SOLUCIONES (FEATURE GRID) ==================== -->
+        <!-- ==================== MINERÍA Y MEDIO AMBIENTE ==================== -->
+        <section id="mineria" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <span class="text-primary-custom fw-bold text-uppercase">Sectores Estratégicos</span>
+                    <h2 class="section-title mt-2">Minería & Medio Ambiente</h2>
+                    <p class="lead mx-auto" style="max-width: 800px;">
+                        Desde la provincia de San Juan, desarrollamos soluciones tecnológicas a medida orientadas a la eficiencia operativa, seguridad en faenas y sostenibilidad ambiental.
+                    </p>
+                </div>
+
+                <div class="glass-panel" data-aos="fade-up" data-aos-delay="150">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-6">
+                            <div class="pe-lg-3">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <i class="fas fa-gem text-cyan fs-3"></i>
+                                    <h3 class="h3 fw-bold text-white mb-0">Soluciones para Minería</h3>
+                                </div>
+                                <p class="text-light-muted">
+                                    La minería moderna demanda precisión, seguridad máxima y control en tiempo real. En Grupo Xamanen desarrollamos software a medida para responder a los desafíos del sector:
+                                </p>
+                                <ul class="service-list">
+                                    <li><strong>Control y Logística en Faena:</strong> Trazabilidad de flotas, control de accesos y despacho de materiales en zonas remotas.</li>
+                                    <li><strong>Gestión Operativa y Reportes:</strong> Carga de partes diarios, reportes de avances y tableros centralizados de visualización.</li>
+                                    <li><strong>Seguridad Crítica:</strong> Integración directa con XamaSafe para protocolos de ingreso, permisos de trabajo en caliente y EPP.</li>
+                                    <li><strong>Digitalización de Procesos Mineros:</strong> Migración de planillas a plataformas cloud accesibles online y offline.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 border-start-lg border-light border-opacity-10 ps-lg-4">
+                            <div class="ps-lg-2">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <i class="fas fa-leaf text-cyan fs-3"></i>
+                                    <h3 class="h3 fw-bold text-white mb-0">Gestión de Medio Ambiente</h3>
+                                </div>
+                                <p class="text-light-muted">
+                                    Brindamos servicios y tecnología orientados al estricto cumplimiento normativo, minimización del impacto y responsabilidad ambiental corporativa:
+                                </p>
+                                <ul class="service-list">
+                                    <li><strong>Planes de Gestión Ambiental:</strong> Desarrollo, auditorías y matrices de cumplimiento legal.</li>
+                                    <li><strong>Estudios de Impacto:</strong> Evaluaciones técnicas para agua, suelo, aire y gestión de residuos.</li>
+                                    <li><strong>Trámites y Habilitaciones:</strong> Asesoría ante entes reguladores provinciales y nacionales.</li>
+                                    <li><strong>Monitoreo y Reportes Verificables:</strong> Registro digital de indicadores ambientales para auditorías y certificaciones.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SOLUCIONES (FEATURE GRID) ==================== -->
         <section id="soluciones" class="py-5">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
                     <span class="text-primary-custom fw-bold text-uppercase">Nuestras Capacidades</span>
                     <h2 class="section-title mt-2">Soluciones a la Medida de tu Desafío</h2>
-                    <p class="lead mx-auto" style="max-width: 800px;">Desde software personalizado hasta optimización de recursos, tenemos la tecnología para llevarte al siguiente nivel.</p>
+                    <p class="lead mx-auto" style="max-width: 800px;">
+                        Desde plataformas operativas personalizadas hasta monitoreo inteligente de recursos, tenemos la tecnología para impulsar tu negocio.
+                    </p>
                 </div>
 
                 <!-- Feature 1: Software a Medida -->
                 <div class="row align-items-center gx-5 mb-5">
-                    <!-- Columna Visual -->
                     <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-                        <div class="solution-visual">
-                            <i class="fas fa-layer-group solution-icon"></i>
-                            <h3 class="mt-3">Software a Medida</h3>
-                            <p class="lead">Desarrollado en alianza con nuestro partner:</p>
-                            <!-- AÑADE AQUÍ EL LOGO DE BI APP GO SI LO TIENES -->
-                            <!-- <img src="./img/biapplogo.png" alt="BI APP GO Logo" class="partner-logo"> -->
-                            <p class="mt-2" style="font-weight: 700; font-size: 1.5rem; color: #fff;">BI APP GO</p>
+                        <div class="solution-visual text-center p-4">
+                            <i class="fas fa-layer-group solution-icon mb-3"></i>
+                            <h3 class="mt-2 text-white fw-bold">Software Operativo a Medida</h3>
+                            <p class="lead text-light-muted">Desarrollado en alianza con nuestro partner tecnológico:</p>
+                            <div class="partner-badge-box d-inline-flex align-items-center gap-2 mt-2 px-3 py-2 rounded-3 bg-white bg-opacity-10 border border-light border-opacity-10">
+                                <img src="./img/biapplogo.jpeg" alt="BI APP GO Logo" class="partner-logo-mini" onerror="this.style.display='none'">
+                                <span class="fw-bold text-white fs-5">BI APP GO</span>
+                            </div>
                         </div>
                     </div>
-                    <!-- Columna de Contenido -->
                     <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
                         <div class="glass-panel h-100">
-                            <p>Desarrollamos aplicaciones potentes y específicas para digitalizar tus operaciones clave:</p>
+                            <p class="fw-semibold text-white">Desarrollamos aplicaciones potentes y específicas para digitalizar tus operaciones clave:</p>
                             <ul class="service-list mt-3">
-                                <li><strong>Gestión de Avances de Obras:</strong> Controla el progreso de tus proyectos en tiempo real.</li>
-                                <li><strong>Logística y Gestión de Viajes:</strong> Administra flotas y entregas de manera integral.</li>
-                                <li><strong>Cadena de Suministro:</strong> Controla recepción, registra datos y administra pagos.</li>
-                                <li><strong>Optimización de Equipos de Venta:</strong> Registra visitas con geoposición GPS.</li>
-                                <li><strong>Chatbot Inteligente:</strong> Automatiza respuestas, agenda turnos y toma pedidos.</li>
+                                <li><strong>Gestión de Avances de Obras y Proyectos:</strong> Control del progreso en tiempo real con evidencias fotográficas.</li>
+                                <li><strong>Logística y Gestión de Viajes:</strong> Administración integral de flotas, despachos y control de entregas.</li>
+                                <li><strong>Cadena de Suministro:</strong> Control de recepción, registro de datos y administración de pagos a proveedores.</li>
+                                <li><strong>Optimización de Equipos de Venta:</strong> Registro de visitas comerciales con geoposición GPS en campo.</li>
+                                <li><strong>Agentes y Chatbots Inteligentes:</strong> Automatización de consultas frecuentes, agendamiento de turnos y toma de pedidos con IA.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- Feature 2: Eficiencia Energética (Orden Invertido) -->
+                <!-- Feature 2: Eficiencia Energética & Monitoreo -->
                 <div class="row align-items-center gx-5">
-                    <!-- Columna de Contenido -->
                     <div class="col-lg-6 order-lg-1" data-aos="fade-right" data-aos-delay="300">
                         <div class="glass-panel h-100">
-                            <p>Implementamos la plataforma "Sherlock" para transformar tu operación y reducir costos:</p>
-                             <ul class="service-list mt-3">
-                                <li><strong>Monitoreo en Tiempo Real:</strong> Supervisa máquinas 24/7 y recibe alertas para prevenir fallos.</li>
-                                <li><strong>Optimización de Suministros:</strong> Asegura la cadena de frío en industrias críticas.</li>
-                                <li><strong>Inteligencia de Negocios:</strong> Analiza métricas para decisiones rápidas y seguras.</li>
-                                <li><strong>Reducción de Costos:</strong> Minimiza desperdicios y optimiza el uso de recursos.</li>
-                                <li><strong>Acompañamiento Experto:</strong> Te guiamos para maximizar tus resultados.</li>
+                            <p class="fw-semibold text-white">Implementamos soluciones de monitoreo y telemetría para optimizar costos operativos:</p>
+                            <ul class="service-list mt-3">
+                                <li><strong>Monitoreo en Tiempo Real:</strong> Supervisión continua 24/7 de máquinas e instalaciones críticas con alertas preventivas.</li>
+                                <li><strong>Optimización de Suministros:</strong> Control y aseguramiento de la cadena de frío en industrias de alimentos y salud.</li>
+                                <li><strong>Inteligencia de Negocios (BI):</strong> Paneles con indicadores clave para decisiones ágiles y fundamentadas.</li>
+                                <li><strong>Reducción de Consumos:</strong> Identificación de anomalías y optimización del uso de recursos energéticos.</li>
+                                <li><strong>Acompañamiento Experto:</strong> Consultoría de nuestros especialistas para maximizar el retorno de inversión.</li>
                             </ul>
                         </div>
                     </div>
-                     <!-- Columna Visual -->
                     <div class="col-lg-6 order-lg-2" data-aos="fade-left" data-aos-delay="200">
-                         <div class="solution-visual">
-                            <i class="fas fa-bolt-lightning solution-icon"></i>
-                            <h3 class="mt-3">Eficiencia Energética</h3>
-                            <p class="lead">Con la tecnología de nuestro partner:</p>
-                             <!-- AÑADE AQUÍ EL LOGO DE TERAOBJECT SI LO TIENES -->
-                            <!-- <img src="./img/teraobjectlogo.png" alt="Teraobject Logo" class="partner-logo"> -->
-                            <p class="mt-2" style="font-weight: 700; font-size: 1.5rem; color: #fff;">Teraobject</p>
+                        <div class="solution-visual text-center p-4">
+                            <i class="fas fa-bolt-lightning solution-icon mb-3"></i>
+                            <h3 class="mt-2 text-white fw-bold">Eficiencia Energética & Operativa</h3>
+                            <p class="lead text-light-muted">Monitoreo inteligente y analítica para reducir costos y evitar paradas imprevistas.</p>
+                            <div class="d-inline-flex align-items-center gap-2 mt-2 px-3 py-1 rounded-pill bg-white bg-opacity-5 border border-light border-opacity-10 text-cyan small">
+                                <i class="fas fa-chart-pie me-1"></i> Telemetría y Dashboards IoT
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
         </section>
-    
+
         <!-- ==================== CONTACTO ==================== -->
         <section id="contacto" class="py-5">
             <div class="container">
@@ -309,53 +396,84 @@
                     <div class="row align-items-center g-5">
                         <!-- Columna Izquierda: Título -->
                         <div class="col-lg-5 text-center text-lg-start">
-                            <h3 id="contact-title" class="display-5"></h3>
-                            <p class="lead">Estamos listos para escuchar sobre tu próximo gran proyecto. Completa el
-                                formulario y un especialista se pondrá en contacto a la brevedad.</p>
+                            <span class="text-primary-custom fw-bold text-uppercase">Da el primer paso</span>
+                            <h3 id="contact-title" class="display-5 mt-2 fw-bold text-white"></h3>
+                            <p class="lead mt-3">
+                                Estamos listos para escuchar sobre tu próximo desafío. Ya sea software a medida, capacitaciones de IA o implementación de XamaSafe, te asesoramos sin compromiso.
+                            </p>
+                            <div class="mt-4 d-none d-lg-block">
+                                <div class="d-flex align-items-center gap-3 text-light-muted mb-2">
+                                    <i class="fas fa-map-marker-alt text-cyan"></i>
+                                    <span>San Juan, Argentina</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 text-light-muted mb-2">
+                                    <i class="fas fa-phone text-cyan"></i>
+                                    <span>+54 9 264 465-5342</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 text-light-muted">
+                                    <i class="fas fa-envelope text-cyan"></i>
+                                    <span>consultas@grupoxamanen.com</span>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Columna Derecha: Formulario -->
                         <div class="col-lg-7">
                             <form>
-                                <div class="mb-3">
-                                    <label for="objetivo" class="form-label">Tu reto / objetivo*</label>
-                                    <textarea id="objetivo" name="objetivo" rows="4" class="form-control"
-                                        required></textarea>
-                                </div>
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="nombre_contacto" class="form-label">Nombre*</label>
+                                        <label for="nombre_contacto" class="form-label text-white">Nombre*</label>
                                         <input type="text" id="nombre_contacto" name="nombre_contacto"
-                                            class="form-control" required>
+                                            class="form-control" placeholder="Ej. Carlos" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="apellido_contacto" class="form-label">Apellido*</label>
+                                        <label for="apellido_contacto" class="form-label text-white">Apellido*</label>
                                         <input type="text" id="apellido_contacto" name="apellido_contacto"
-                                            class="form-control" required>
+                                            class="form-control" placeholder="Ej. Gómez" required>
                                     </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email_contacto" class="form-label">Email*</label>
-                                    <input type="email" id="email_contacto" name="email_contacto" class="form-control"
-                                        required>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="empresa_contacto" class="form-label">Empresa</label>
-                                        <input type="text" id="empresa_contacto" name="empresa_contacto"
-                                            class="form-control">
+                                        <label for="email_contacto" class="form-label text-white">Email Corporativo*</label>
+                                        <input type="email" id="email_contacto" name="email_contacto" class="form-control"
+                                            placeholder="nombre@empresa.com" required>
                                     </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="empresa_contacto" class="form-label text-white">Empresa u Organización</label>
+                                        <input type="text" id="empresa_contacto" name="empresa_contacto"
+                                            class="form-control" placeholder="Nombre de tu empresa">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="area_interes" class="form-label text-white">Área o Solución de Interés*</label>
+                                    <select id="area_interes" name="area_interes" class="form-select" required>
+                                        <option value="" disabled selected>Selecciona una opción</option>
+                                        <option value="software-medida">Desarrollo de Software a Medida</option>
+                                        <option value="capacitaciones-ia">Capacitaciones de IA para Empresas (XamaStudio)</option>
+                                        <option value="xamasafe-hse">Plataforma HSE XamaSafe (Higiene y Seguridad)</option>
+                                        <option value="mineria-tecnologia">Soluciones y Software para Minería</option>
+                                        <option value="medio-ambiente">Gestión y Consultoría de Medio Ambiente</option>
+                                        <option value="eficiencia-energetica">Eficiencia Energética & Monitoreo</option>
+                                        <option value="otro">Otro reto o consulta general</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="objetivo" class="form-label text-white">Cuéntanos sobre tu objetivo o proyecto*</label>
+                                    <textarea id="objetivo" name="objetivo" rows="3" class="form-control"
+                                        placeholder="Describe brevemente qué necesitas resolver o qué proyecto tienes en mente..." required></textarea>
                                 </div>
                                 <div class="form-check mb-3">
                                     <input class="form-check-input" type="checkbox" name="newsletter"
-                                        id="newsletterCheck">
-                                    <label class="form-check-label" for="newsletterCheck">
-                                        Quiero recibir el boletín de Xamanen con actualizaciones y recursos.
+                                        id="newsletterCheck" checked>
+                                    <label class="form-check-label text-light-muted small" for="newsletterCheck">
+                                        Deseo recibir novedades, recursos y tendencias de tecnología e IA de Grupo Xamanen.
                                     </label>
                                 </div>
-                                <button type="submit" class="btn btn-submit">Enviar Mensaje</button>
-                                <p class="form-text mt-3">
-                                    Al completar este formulario, aceptas nuestra política de confidencialidad.
+                                <button type="submit" class="btn btn-submit w-100 py-3 rounded-pill fw-bold">
+                                    <i class="fas fa-paper-plane me-2"></i> Enviar Mensaje
+                                </button>
+                                <p class="form-text mt-3 text-center text-muted-custom small">
+                                    Respetamos tu privacidad. Tus datos sólo serán utilizados para responder a tu consulta.
                                 </p>
                             </form>
                         </div>
@@ -369,39 +487,62 @@
     <!-- ==================== FOOTER ==================== -->
     <footer class="pt-5 pb-4">
         <div class="container">
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h4 class="mb-3">Grupo Xamanen</h4>
-                    <p>Potenciamos negocios con tecnología para un futuro más eficiente y sostenible.</p>
-                    <div class="social-icons mt-3">
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <img src="./img/logoxamanen.png" alt="Logo Grupo Xamanen" class="brand-logo" onerror="this.style.display='none'">
+                        <h4 class="mb-0 text-white fw-bold">Grupo Xamanen</h4>
+                    </div>
+                    <p class="text-light-muted">
+                        Potenciamos negocios con tecnología de vanguardia, software a medida, capacitaciones en IA y plataformas especializadas en higiene, seguridad y minería desde San Juan, Argentina.
+                    </p>
+                    <div class="social-icons mt-3 d-flex gap-2">
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-6 mb-4 mb-lg-0">
-                    <h5 class="mb-3">Navegación</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#partners" class="footer-link">Partners</a></li>
+                <div class="col-lg-2 col-6">
+                    <h5 class="mb-3 text-white fw-semibold">Navegación</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#capacidades" class="footer-link">Capacidades</a></li>
+                        <li><a href="#plataformas" class="footer-link">Plataformas</a></li>
                         <li><a href="#soluciones" class="footer-link">Soluciones</a></li>
+                        <li><a href="#mineria" class="footer-link">Minería & Ambiente</a></li>
                         <li><a href="#contacto" class="footer-link">Contacto</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-6 mb-4 mb-lg-0">
-                    <h5 class="mb-3">Contacto Telefónico</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> 26446553442</li>
+                <div class="col-lg-3 col-6">
+                    <h5 class="mb-3 text-white fw-semibold">Ecosistema Xamanen</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li>
+                            <a href="https://xamasafe.com/login" target="_blank" rel="noopener noreferrer" class="footer-link text-cyan">
+                                <i class="fas fa-shield-alt me-1"></i> XamaSafe (HSE)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#plataformas" class="footer-link">
+                                <i class="fas fa-graduation-cap me-1"></i> XamaStudio (LMS & IA)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#mineria" class="footer-link">
+                                <i class="fas fa-mountain me-1"></i> Soluciones Mineras
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h5 class="mb-3">Email</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> consultas@grupoxamanen.com</li>
+                <div class="col-lg-3">
+                    <h5 class="mb-3 text-white fw-semibold">Contacto & Sede</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 text-light-muted">
+                        <li><i class="fas fa-map-marker-alt me-2 text-cyan"></i> San Juan, Argentina</li>
+                        <li><i class="fas fa-phone me-2 text-cyan"></i> +54 9 264 465-5342</li>
+                        <li><i class="fas fa-envelope me-2 text-cyan"></i> consultas@grupoxamanen.com</li>
                     </ul>
                 </div>
             </div>
             <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
-            <div class="text-center">
-                <p>© <span id="year"></span> Grupo Xamanen. Todos los derechos reservados.</p>
+            <div class="text-center text-muted-custom small">
+                <p class="mb-0">© <span id="year"></span> Grupo Xamanen. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -415,6 +556,5 @@
     <!-- Custom JS -->
     <script src="index.js"></script>
 </body>
-
 
 </html>
