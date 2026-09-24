@@ -9,3 +9,6 @@ Thumbs.db
 
 # Internal agents
 .agents/
+
+# Lighthouse reports
+lighthouse*.json
