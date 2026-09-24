@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Xamanen | Innovación y Tecnología para Minería e Industria (Modelo B)</title>
+    <meta name="description" content="Ecosistemas digitales, software a medida, plataforma HSE XamaSafe y consultoría tecnológica e industrial desde San Juan, Argentina.">
+    <link rel="icon" href="./img/grupoxamanen-blanco.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Custom CSS (Modelo B: DeepTech HUD) -->
+    <link rel="stylesheet" href="style-b.css?v=1.0">
+</head>
+
+<body>
+
+    <!-- BARRA SUPERIOR SELECTOR DE PROPUESTAS VISUALES -->
+    <div class="model-switch-bar">
+        <div class="container d-flex flex-wrap align-items-center justify-content-between gap-2">
+            <div class="d-flex align-items-center gap-2">
+                <span class="badge bg-secondary text-white fw-bold"><i class="fas fa-layer-group me-1"></i> Comparador de Diseño</span>
+                <span class="text-light-muted d-none d-sm-inline">Elige entre las dos propuestas visuales:</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <a href="index.html" class="model-pill inactive">
+                    <i class="fas fa-gem"></i> Opción A: Aurora Glass
+                </a>
+                <a href="modelo-b.html" class="model-pill active">
+                    <i class="fas fa-terminal"></i> Opción B: DeepTech HUD
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- GLOW ORBS DECORATIVOS DE FONDO -->
+    <div class="glow-orb glow-orb-cyan" style="top: 100px; left: 5%; width: 450px; height: 450px;"></div>
+    <div class="glow-orb glow-orb-emerald" style="top: 600px; right: 5%; width: 500px; height: 500px;"></div>
+    <div class="glow-orb glow-orb-blue" style="top: 1400px; left: 10%; width: 550px; height: 550px;"></div>
+
+    <!-- NAVBAR HUD -->
+    <nav class="navbar navbar-expand-lg navbar-hud sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="./img/grupoxamanen-blanco.png" alt="Logo Grupo Xamanen" class="brand-logo">
+                <span>Grupo Xamanen</span>
+            </a>
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navHudContent" aria-controls="navHudContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navHudContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#soluciones">Soluciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#clientes">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="#contacto" class="btn-hud-primary">
+                        <span>Iniciar Consulta</span>
+                        <i class="fas fa-arrow-right small"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION (HUD ESTILO FINTECH-CRYPTO) ==================== -->
+    <section id="inicio" class="hero-hud grid-bg">
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center g-5">
+                
+                <!-- Columna Izquierda: Mensaje Central -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="badge-hud badge-hud-emerald mb-4">
+                        <span class="status-pulse"></span>
+                        <span>Plataforma & Operaciones Activas • San Juan, AR</span>
+                    </div>
+                    <h1 class="display-4 fw-bold text-white mb-4">
+                        Tecnología de Misión Crítica para <br>
+                        <span class="gradient-text">Minería e Industria</span>
+                    </h1>
+                    <p class="lead text-light-muted mb-4" style="color: var(--text-muted); font-size: 1.15rem;">
+                        Desarrollamos soluciones integrales de software a medida, plataformas HSE para faenas de alta exigencia, consultoría ambiental y capacitaciones de Inteligencia Artificial para empresas líderes.
+                    </p>
+                    
+                    <div class="d-flex flex-wrap gap-3 mb-5">
+                        <a href="#servicios" class="btn-hud-primary">
+                            <span>Conocer Soluciones</span>
+                            <i class="fas fa-cube"></i>
+                        </a>
+                        <a href="#contacto" class="btn-hud-secondary">
+                            <span>Agendar Asesoría</span>
+                            <i class="fas fa-calendar-check"></i>
+                        </a>
+                    </div>
+
+                    <!-- Píldoras de Confianza Técnica -->
+                    <div class="d-flex flex-wrap align-items-center gap-4 text-light-muted small" style="color: var(--text-muted);">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-shield-halved" style="color: var(--secondary-emerald);"></i>
+                            <span>Normativas HSE San Juan</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-bolt" style="color: var(--primary-cyan);"></i>
+                            <span>Disponibilidad 99.9%</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-brain" style="color: #a855f7;"></i>
+                            <span>IA Aplicada a Procesos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Mockup Visual HUD Industrial -->
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="position-relative">
+                        
+                        <!-- Floating Badge Superior Derecha -->
+                        <div class="hud-floating-badge badge-top-right">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="rounded-circle p-2 text-white" style="background: rgba(168, 85, 247, 0.2); border: 1px solid rgba(168, 85, 247, 0.4);">
+                                    <i class="fas fa-microchip text-purple" style="color: #c084fc;"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold text-white small">XamaStudio AI</div>
+                                    <div class="text-xs" style="color: #34d399; font-size: 0.75rem;">Modelos Activos</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Principal del HUD -->
+                        <div class="hud-card p-4 p-md-5">
+                            <div class="d-flex align-items-center justify-content-between mb-4 pb-3 border-bottom border-secondary border-opacity-10">
+                                <div>
+                                    <div class="text-uppercase small fw-bold" style="color: var(--primary-cyan); letter-spacing: 0.08em; font-size: 0.75rem;">Panel de Supervisión</div>
+                                    <h4 class="text-white fw-bold mb-0">XamaSafe™ Engine</h4>
+                                </div>
+                                <div class="text-end">
+                                    <div class="badge badge-hud-emerald">
+                                        <i class="fas fa-check-circle me-1"></i> Seguro
+                                    </div>
+                                    <div class="text-xs text-light-muted mt-1" style="font-size: 0.75rem;">Operación Continua</div>
+                                </div>
+                            </div>
+
+                            <!-- Métricas de Desempeño en Faena -->
+                            <div class="row g-3 mb-4">
+                                <div class="col-6">
+                                    <div class="hud-metric-box">
+                                        <span class="d-block small" style="color: var(--text-muted); font-size: 0.8rem;">Cumplimiento HSE</span>
+                                        <span class="fs-4 fw-bold text-white">99.8%</span>
+                                        <span class="d-block text-xs mt-1" style="color: var(--secondary-emerald); font-size: 0.75rem;">
+                                            <i class="fas fa-arrow-trend-up me-1"></i> +2.4% este mes
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="hud-metric-box">
+                                        <span class="d-block small" style="color: var(--text-muted); font-size: 0.8rem;">Horas Faena Seguras</span>
+                                        <span class="fs-4 fw-bold text-white">48,250h</span>
+                                        <span class="d-block text-xs mt-1" style="color: var(--primary-cyan); font-size: 0.75rem;">
+                                            <i class="fas fa-shield me-1"></i> 0 incidentes
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Gráfico SVG de Telemetría Dinámica -->
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="small fw-semibold text-white">Rendimiento Operativo y Trazabilidad</span>
+                                    <span class="text-xs" style="color: var(--primary-cyan); font-family: var(--font-mono);">SLA: 99.9%</span>
+                                </div>
+                                <div style="height: 110px; width: 100%;">
+                                    <svg viewBox="0 0 400 120" style="width: 100%; height: 100%; overflow: visible;" preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="hudGradientCyan" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.35"/>
+                                                <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.0"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M0,85 C40,75 80,90 120,60 C160,30 200,65 240,40 C280,20 320,45 360,25 C380,15 400,20 400,20 L400,120 L0,120 Z" fill="url(#hudGradientCyan)" />
+                                        <path d="M0,85 C40,75 80,90 120,60 C160,30 200,65 240,40 C280,20 320,45 360,25 C380,15 400,20 400,20" fill="none" stroke="#00f0ff" stroke-width="3" stroke-linecap="round" />
+                                        <circle cx="240" cy="40" r="5" fill="#00f0ff" style="filter: drop-shadow(0 0 8px #00f0ff);" />
+                                        <circle cx="360" cy="25" r="5" fill="#10b981" style="filter: drop-shadow(0 0 8px #10b981);" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Footer del Widget HUD -->
+                            <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-10 small" style="color: var(--text-muted); font-size: 0.8rem;">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="fas fa-server" style="color: var(--primary-cyan);"></i>
+                                    <span>Servidores Cloud Seguros</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="fas fa-location-dot" style="color: var(--secondary-emerald);"></i>
+                                    <span>San Juan • Minería Activa</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge Inferior Izquierda -->
+                        <div class="hud-floating-badge badge-bottom-left">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="rounded-circle p-2 text-white" style="background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.4);">
+                                    <i class="fas fa-shield-check" style="color: #34d399;"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold text-white small">Gestión HSE</div>
+                                    <div class="text-xs" style="color: var(--text-muted); font-size: 0.75rem;">Certificaciones Vigentes</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BANNER DE MÉTRICAS / AUTORIDAD ==================== -->
+    <div class="stats-banner-hud">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-value gradient-text">+10</div>
+                        <div class="stat-label">Años de Trayectoria</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-value gradient-text-emerald">99.9%</div>
+                        <div class="stat-label">Disponibilidad de Servicio</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-value gradient-text">100%</div>
+                        <div class="stat-label">Cumplimiento Minero</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-value gradient-text-emerald">0</div>
+                        <div class="stat-label">Paradas No Planificadas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SERVICIOS / BENTO GRID ==================== -->
+    <section id="servicios" class="section-hud">
+        <div class="container">
+            <div class="section-header-hud" data-aos="fade-up">
+                <div class="section-tagline">Capacidades Estratégicas</div>
+                <h2 class="display-5 fw-bold text-white mb-3">Nuestras Soluciones Corporativas</h2>
+                <p class="lead text-light-muted" style="color: var(--text-muted);">
+                    Diseñadas para responder a las exigencias más estrictas de faenas mineras, industrias de manufactura y empresas en crecimiento.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Tarjeta 1: XamaSafe HSE (Destacada) -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bento-card">
+                        <div>
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div class="bento-icon-wrapper mb-0">
+                                    <i class="fas fa-shield-heart"></i>
+                                </div>
+                                <span class="badge badge-hud-emerald">Plataforma Insignia</span>
+                            </div>
+                            <h3 class="text-white fw-bold mt-3 mb-2">Plataforma HSE XamaSafe™</h3>
+                            <p class="text-light-muted" style="color: var(--text-muted);">
+                                Sistema integral para la gestión y control de Higiene, Seguridad y Medio Ambiente en proyectos industriales y faenas mineras críticas.
+                            </p>
+                            <ul class="bento-list">
+                                <li>Control de contratistas, habilitaciones y documentación legal en tiempo real.</li>
+                                <li>Matriz de riesgos interactiva y emisión digital de permisos de trabajo (PT).</li>
+                                <li>Alertas preventivas automáticas y trazabilidad para auditorías provinciales.</li>
+                                <li>Paneles gerenciales con indicadores clave de siniestralidad cero.</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 pt-3 border-top border-secondary border-opacity-10 d-flex justify-content-between align-items-center">
+                            <span class="small text-white fw-semibold">Especialidad Minera & Faenas</span>
+                            <a href="#contacto" class="text-decoration-none fw-bold small" style="color: var(--primary-cyan);">
+                                Solicitar Demo <i class="fas fa-chevron-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Software a Medida -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bento-card">
+                        <div>
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div class="bento-icon-wrapper mb-0">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <span class="badge badge-hud-cyan">Desarrollo Propio</span>
+                            </div>
+                            <h3 class="text-white fw-bold mt-3 mb-2">Desarrollo de Software a Medida</h3>
+                            <p class="text-light-muted" style="color: var(--text-muted);">
+                                Construcción de software corporativo, portales web, aplicaciones móviles y dashboards de inteligencia de negocios para optimizar tus flujos de trabajo.
+                            </p>
+                            <ul class="bento-list">
+                                <li>Gestión de avances de obras y proyectos con registro fotográfico geolocalizado.</li>
+                                <li>Logística integral de flotas, control de despachos y administración de viajes.</li>
+                                <li>Control de cadena de suministro y gestión de cuentas por pagar a proveedores.</li>
+                                <li>Plataformas cloud de alta seguridad diseñadas para operar en campo.</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 pt-3 border-top border-secondary border-opacity-10 d-flex justify-content-between align-items-center">
+                            <span class="small text-white fw-semibold">Cloud, Web & Mobile</span>
+                            <a href="#soluciones" class="text-decoration-none fw-bold small" style="color: var(--primary-cyan);">
+                                Ver Módulos <i class="fas fa-chevron-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: XamaStudio IA -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bento-card">
+                        <div>
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div class="bento-icon-wrapper mb-0" style="background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <span class="badge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3);">XamaStudio</span>
+                            </div>
+                            <h3 class="text-white fw-bold mt-3 mb-2">Capacitaciones de IA para Empresas</h3>
+                            <p class="text-light-muted" style="color: var(--text-muted);">
+                                Programas prácticos in-company para equipos técnicos y directivos, orientados a la implementación efectiva de herramientas de Inteligencia Artificial generativa y predictiva.
+                            </p>
+                            <ul class="bento-list">
+                                <li>Creación y despliegue de agentes inteligentes y chatbots para atención 24/7.</li>
+                                <li>Automatización de tareas repetitivas y generación de informes ejecutivos con IA.</li>
+                                <li>Capacitación adaptada a la industria: casos de uso reales y retorno de inversión claro.</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 pt-3 border-top border-secondary border-opacity-10 d-flex justify-content-between align-items-center">
+                            <span class="small text-white fw-semibold">In-Company & Virtual</span>
+                            <a href="#contacto" class="text-decoration-none fw-bold small" style="color: var(--primary-cyan);">
+                                Consultar Fechas <i class="fas fa-chevron-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 4: Gestión y Consultoría Ambiental -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bento-card">
+                        <div>
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div class="bento-icon-wrapper mb-0" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <span class="badge badge-hud-emerald">Sustentabilidad</span>
+                            </div>
+                            <h3 class="text-white fw-bold mt-3 mb-2">Gestión y Consultoría de Medio Ambiente</h3>
+                            <p class="text-light-muted" style="color: var(--text-muted);">
+                                Acompañamiento especializado para garantizar la sostenibilidad ambiental y el estricto cumplimiento normativo en San Juan y la región cuyana.
+                            </p>
+                            <ul class="bento-list">
+                                <li>Planes de gestión ambiental y programas de reducción de impacto en faena.</li>
+                                <li>Monitoreo de efluentes, calidad de aire y protocolos de manejo de residuos.</li>
+                                <li>Asesoría para auditorías y certificaciones de estándares internacionales.</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 pt-3 border-top border-secondary border-opacity-10 d-flex justify-content-between align-items-center">
+                            <span class="small text-white fw-semibold">Consultoría Especializada</span>
+                            <a href="#contacto" class="text-decoration-none fw-bold small" style="color: var(--primary-cyan);">
+                                Solicitar Asesor <i class="fas fa-chevron-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SOLUCIONES A MEDIDA DETALLADAS ==================== -->
+    <section id="soluciones" class="section-hud" style="background: rgba(10, 14, 39, 0.5);">
+        <div class="container">
+            <div class="section-header-hud" data-aos="fade-up">
+                <div class="section-tagline">Capacidad Operativa</div>
+                <h2 class="display-5 fw-bold text-white mb-3">Módulos de Software para la Industria</h2>
+                <p class="lead text-light-muted" style="color: var(--text-muted);">
+                    Tecnología probada en campo para resolver los cuellos de botella de la minería, construcción y logística.
+                </p>
+            </div>
+
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="hud-card p-4 p-md-5 text-center">
+                        <i class="fas fa-network-wired mb-4" style="font-size: 3.5rem; color: var(--primary-cyan); text-shadow: 0 0 25px rgba(0, 240, 255, 0.5);"></i>
+                        <h3 class="text-white fw-bold mb-3">Transformación Operativa</h3>
+                        <p class="text-light-muted mb-4" style="color: var(--text-muted);">
+                            Unificamos tus procesos de terreno y oficina central en una única arquitectura escalable con datos en tiempo real.
+                        </p>
+                        <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill" style="background: rgba(0, 240, 255, 0.08); border: 1px solid var(--border-accent); color: var(--primary-cyan); font-size: 0.85rem;">
+                            <i class="fas fa-bolt me-1"></i> Integración Cloud & On-Premise
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="bento-card">
+                        <h4 class="text-white fw-bold mb-3">Áreas de Implementación Directa:</h4>
+                        <ul class="bento-list">
+                            <li class="mb-3">
+                                <strong class="text-white">Gestión de Avances de Obras y Proyectos:</strong> 
+                                Seguimiento fotográfico con geoposicionamiento satelital y certificación de avance físico en faena.
+                            </li>
+                            <li class="mb-3">
+                                <strong class="text-white">Logística Integral y Gestión de Viajes:</strong> 
+                                Control vehicular, despacho de cargas, guías electrónicas y trazabilidad punto a punto.
+                            </li>
+                            <li class="mb-3">
+                                <strong class="text-white">Cadena de Suministro y Proveedores:</strong> 
+                                Recepción en almacenes, validación de conformidades y liquidación ágil de órdenes de pago.
+                            </li>
+                            <li class="mb-3">
+                                <strong class="text-white">Equipos Comerciales y Técnicos en Campo:</strong> 
+                                Registro de visitas con coordenadas GPS, relevamiento de necesidades y firma digital.
+                            </li>
+                            <li>
+                                <strong class="text-white">Agentes y Chatbots con Inteligencia Artificial:</strong> 
+                                Automatización de respuestas para contratistas, agendamiento de visitas y soporte 24/7.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature de Eficiencia Energética oculta temporalmente por solicitud del cliente -->
+        </div>
+    </section>
+
+    <!-- ==================== CLIENTES Y CONFIANZA ==================== -->
+    <section id="clientes" class="section-hud">
+        <div class="container">
+            <div class="section-header-hud" data-aos="fade-up">
+                <div class="section-tagline">Relaciones de Confianza</div>
+                <h2 class="display-5 fw-bold text-white mb-3">Empresas que Confían en Xamanen</h2>
+                <p class="lead text-light-muted" style="color: var(--text-muted);">
+                    Organizaciones referentes de la industria y la minería que respaldan nuestra seriedad y capacidad de ejecución.
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="client-logo-card">
+                        <img src="./img/logos/mecanizado_diaz.png" alt="Mecanizado Díaz">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="client-logo-card">
+                        <img src="./img/logos/ciaf.png" alt="CIAF">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="client-logo-card">
+                        <img src="./img/logos/gaidum.png" alt="Gaidum">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="client-logo-card">
+                        <img src="./img/logos/donatello_proyect.png" alt="Donatello Proyect">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="client-logo-card">
+                        <img src="./img/logos/EP.png" alt="EP">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NOSOTROS / PROPÓSITO ==================== -->
+    <section id="nosotros" class="section-hud" style="background: rgba(10, 14, 39, 0.4);">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="section-tagline">Nuestra Identidad</div>
+                    <h2 class="display-5 fw-bold text-white mb-4">Ingeniería Sanjuanina con Visión Global</h2>
+                    <p class="text-light-muted mb-4" style="color: var(--text-muted); font-size: 1.05rem;">
+                        En <strong>Grupo Xamanen</strong> nacimos en la provincia de San Juan con una convicción clara: la tecnología y la ingeniería de clase mundial se construyen desde el territorio, entendiendo en profundidad el rigor y la complejidad de las faenas mineras e industriales.
+                    </p>
+                    <p class="text-light-muted mb-4" style="color: var(--text-muted);">
+                        Combinamos experiencia en desarrollo de software, protocolos de salud ocupacional, sustentabilidad y formación corporativa para ser el socio tecnológico estratégico de las empresas que mueven la economía productiva.
+                    </p>
+                    <div class="d-flex align-items-center gap-4">
+                        <div>
+                            <h5 class="fw-bold text-white mb-1">San Juan, Argentina</h5>
+                            <span class="small" style="color: var(--primary-cyan);">Presencia directa y soporte en terreno</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="hud-metric-box h-100 p-4">
+                                <i class="fas fa-check-double mb-3 fs-3" style="color: var(--primary-cyan);"></i>
+                                <h5 class="text-white fw-bold mb-2">Cero Fricción</h5>
+                                <p class="small mb-0" style="color: var(--text-muted);">Sistemas diseñados para usuarios en faena, sin complejidades innecesarias.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="hud-metric-box h-100 p-4">
+                                <i class="fas fa-lock mb-3 fs-3" style="color: var(--secondary-emerald);"></i>
+                                <h5 class="text-white fw-bold mb-2">Seguridad Absoluta</h5>
+                                <p class="small mb-0" style="color: var(--text-muted);">Protección de datos industriales y registros auditables bajo normativa.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="hud-metric-box h-100 p-4">
+                                <i class="fas fa-handshake mb-3 fs-3" style="color: #a855f7;"></i>
+                                <h5 class="text-white fw-bold mb-2">Acompañamiento</h5>
+                                <p class="small mb-0" style="color: var(--text-muted);">Equipo de consultoría senior disponible antes, durante y después del despliegue.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="hud-metric-box h-100 p-4">
+                                <i class="fas fa-seedling mb-3 fs-3" style="color: #38bdf8;"></i>
+                                <h5 class="text-white fw-bold mb-2">Sustentabilidad</h5>
+                                <p class="small mb-0" style="color: var(--text-muted);">Compromiso con el cuidado del medio ambiente y la comunidad local.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FORMULARIO DE CONTACTO ==================== -->
+    <section id="contacto" class="section-hud">
+        <div class="container">
+            <div class="contact-hud-box" data-aos="zoom-in">
+                <div class="row g-5 align-items-center">
+                    
+                    <div class="col-lg-5">
+                        <div class="badge-hud badge-hud-cyan mb-3">
+                            <i class="fas fa-envelope-open-text"></i> Contacto Directo
+                        </div>
+                        <h2 class="display-6 fw-bold text-white mb-3">Conversemos sobre tu Proyecto</h2>
+                        <p class="text-light-muted mb-4" style="color: var(--text-muted);">
+                            Cuéntanos el desafío tecnológico, operativo o normativo de tu empresa. Nuestros especialistas te responderán en menos de 24 horas hábiles.
+                        </p>
+                        
+                        <div class="d-flex flex-column gap-3 mb-4">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="social-circle-hud" style="color: var(--primary-cyan); border-color: rgba(0, 240, 255, 0.3);">
+                                    <i class="fas fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <div class="small fw-bold text-white">Sede Central</div>
+                                    <div class="small" style="color: var(--text-muted);">San Juan, Argentina</div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="social-circle-hud" style="color: var(--secondary-emerald); border-color: rgba(16, 185, 129, 0.3);">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <div class="small fw-bold text-white">WhatsApp Corporativo</div>
+                                    <div class="small" style="color: var(--text-muted);">+54 9 264 457-3023</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <form id="contact-form" action="https://formsubmit.co/contacto@grupoxamanen.com" method="POST">
+                            <input type="hidden" name="_subject" value="Nuevo contacto desde la Landing Grupo Xamanen (Modelo B)">
+                            <input type="hidden" name="_captcha" value="false">
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label text-white small fw-bold">Nombre y Apellido*</label>
+                                    <input type="text" name="nombre" class="form-hud-control" placeholder="Ej: Juan Pérez" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-white small fw-bold">Empresa u Organización*</label>
+                                    <input type="text" name="empresa" class="form-hud-control" placeholder="Ej: Minera / Industria S.A." required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-white small fw-bold">Correo Electrónico*</label>
+                                    <input type="email" name="email" class="form-hud-control" placeholder="ejemplo@empresa.com" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-white small fw-bold">Teléfono / WhatsApp</label>
+                                    <input type="tel" name="telefono" class="form-hud-control" placeholder="+54 9 ...">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-white small fw-bold">Área o Solución de Interés*</label>
+                                    <select name="servicio" class="form-hud-control form-hud-select" required>
+                                        <option value="" disabled selected>Selecciona una opción</option>
+                                        <option value="xamasafe-hse">Plataforma HSE XamaSafe (Higiene y Seguridad en Faena)</option>
+                                        <option value="software-medida">Desarrollo de Software a Medida (Web / Mobile / Cloud)</option>
+                                        <option value="capacitaciones-ia">Capacitaciones de IA para Empresas (XamaStudio)</option>
+                                        <option value="medio-ambiente">Gestión y Consultoría de Medio Ambiente</option>
+                                        <option value="otro">Otro requerimiento o consulta institucional</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-white small fw-bold">Cuéntanos sobre tu objetivo o proyecto*</label>
+                                    <textarea name="objetivo" rows="3" class="form-hud-control" placeholder="Describe brevemente qué desafío necesitas resolver..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn-hud-primary w-100 justify-content-center py-3">
+                                        <span>Enviar Consulta</span>
+                                        <i class="fas fa-paper-plane ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer-hud">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-5">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <img src="./img/grupoxamanen-blanco.png" alt="Logo Grupo Xamanen" style="height: 36px;">
+                        <h4 class="text-white fw-bold mb-0">Grupo Xamanen</h4>
+                    </div>
+                    <p class="small text-light-muted mb-4" style="color: var(--text-muted); max-width: 380px;">
+                        Ecosistemas digitales de alta exigencia para minería, logística e industrias. Desde San Juan hacia todo el país.
+                    </p>
+                    <div class="d-flex align-items-center gap-2">
+                        <a href="https://linkedin.com" target="_blank" class="social-circle-hud" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="social-circle-hud" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:contacto@grupoxamanen.com" class="social-circle-hud" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <h6 class="text-white fw-bold mb-3 text-uppercase small" style="letter-spacing: 0.05em;">Servicios</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#servicios" class="footer-link-hud">Plataforma HSE XamaSafe</a></li>
+                        <li><a href="#servicios" class="footer-link-hud">Software a Medida</a></li>
+                        <li><a href="#servicios" class="footer-link-hud">XamaStudio IA</a></li>
+                        <li><a href="#servicios" class="footer-link-hud">Gestión Ambiental</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-4">
+                    <h6 class="text-white fw-bold mb-3 text-uppercase small" style="letter-spacing: 0.05em;">Comparador</h6>
+                    <p class="small" style="color: var(--text-muted);">
+                        Estás visualizando la <strong>Opción B (DeepTech HUD)</strong>. Puedes alternar a la versión Aurora Glass cuando lo desees:
+                    </p>
+                    <a href="index.html" class="btn-hud-secondary py-2 px-3 small">
+                        <i class="fas fa-arrow-left me-1"></i> Ver Opción A: Aurora Glass
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-4 border-top border-secondary border-opacity-10 d-flex flex-wrap justify-content-between align-items-center gap-2 small" style="color: var(--text-dim); font-size: 0.8rem;">
+                <div>© 2026 Grupo Xamanen. Todos los derechos reservados. San Juan, Argentina.</div>
+                <div>Propuesta de Diseño Modelo B • UI/UX Pro Max</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+    </script>
+</body>
+</html>
