@@ -483,6 +483,7 @@ section {
     box-shadow: var(--shadow-glow-cyan);
 }
 
+.partner-feature-box h3,
 .partner-feature-box h4 {
     font-size: 1.25rem;
     margin-bottom: 0.75rem;

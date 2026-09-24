@@ -12,22 +12,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
 
     <!-- Font Preloads (Swap / Zero-CLS para Lighthouse) -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <!-- Google Fonts No-Render-Blocking -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+    </noscript>
 
-    <!-- Libraries -->
+    <!-- Critical CSS (Bootstrap + Theme) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css?v=2.4">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css?v=2.3">
+    <!-- Non-Critical CSS Asynchronously Loaded -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"></noscript>
 </head>
 
 <body>
@@ -126,11 +133,11 @@
                     Empresas y organizaciones que confían en nuestras soluciones
                 </p>
                 <div class="d-flex justify-content-center align-items-center flex-wrap gap-4 gap-md-5 client-logos-grid opacity-75">
-                    <img src="./img/logos/ciaf.png" alt="CIAF" class="client-logo-img">
-                    <img src="./img/logos/donatello_proyect.png" alt="Donatello Proyect" class="client-logo-img">
-                    <img src="./img/logos/EP.png" alt="Equipo Preventivo" class="client-logo-img">
-                    <img src="./img/logos/gaidum.png" alt="Gaidum" class="client-logo-img">
-                    <img src="./img/logos/mecanizado_diaz.png" alt="Mecanizado Díaz" class="client-logo-img">
+                    <img src="./img/logos/ciaf.png" alt="CIAF" class="client-logo-img" width="160" height="48" loading="lazy" decoding="async">
+                    <img src="./img/logos/donatello_proyect.png" alt="Donatello Proyect" class="client-logo-img" width="160" height="48" loading="lazy" decoding="async">
+                    <img src="./img/logos/EP.png" alt="Equipo Preventivo" class="client-logo-img" width="160" height="48" loading="lazy" decoding="async">
+                    <img src="./img/logos/gaidum.png" alt="Gaidum" class="client-logo-img" width="160" height="48" loading="lazy" decoding="async">
+                    <img src="./img/logos/mecanizado_diaz.png" alt="Mecanizado Díaz" class="client-logo-img" width="160" height="48" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>
@@ -151,7 +158,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="partner-feature-box h-100">
                                 <div class="icon-wrapper"><i class="fas fa-laptop-code"></i></div>
-                                <h4>Software a Medida</h4>
+                                <h3 class="h4">Software a Medida</h3>
                                 <p>Desarrollo de aplicaciones web y móviles para digitalizar flujos operativos, trazabilidad de datos y procesos críticos de tu empresa.</p>
                             </div>
                         </div>
@@ -159,7 +166,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="partner-feature-box h-100">
                                 <div class="icon-wrapper"><i class="fas fa-brain"></i></div>
-                                <h4>Capacitaciones en IA</h4>
+                                <h3 class="h4">Capacitaciones en IA</h3>
                                 <p>Entrenamos a tus colaboradores para utilizar herramientas de Inteligencia Artificial práctica en su día a día, potenciando la productividad de cualquier sector.</p>
                             </div>
                         </div>
@@ -167,7 +174,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="partner-feature-box h-100">
                                 <div class="icon-wrapper"><i class="fas fa-shield-heart"></i></div>
-                                <h4>XamaSafe · Plataforma HSE</h4>
+                                <h3 class="h4">XamaSafe · Plataforma HSE</h3>
                                 <p>Nuestra plataforma para la gestión inteligente de Higiene, Seguridad y Medio Ambiente. Control de contratistas, matrices y normas ISO.</p>
                             </div>
                         </div>
@@ -175,7 +182,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="partner-feature-box h-100">
                                 <div class="icon-wrapper"><i class="fas fa-chalkboard-user"></i></div>
-                                <h4>XamaStudio · LMS Propio</h4>
+                                <h3 class="h4">XamaStudio · LMS Propio</h3>
                                 <p>Campus virtual educativo para impartir capacitaciones continuas, seguimiento del progreso de colaboradores y emisión de certificados.</p>
                             </div>
                         </div>
@@ -183,7 +190,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="partner-feature-box h-100">
                                 <div class="icon-wrapper"><i class="fas fa-mountain"></i></div>
-                                <h4>Minería & Industria</h4>
+                                <h3 class="h4">Minería & Industria</h3>
                                 <p>Soluciones tecnológicas y desarrollo a medida concebidos para los altos estándares de faenas mineras, logística de campo y plantas industriales.</p>
                             </div>
                         </div>
@@ -191,7 +198,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="partner-feature-box h-100">
                                 <div class="icon-wrapper"><i class="fas fa-chart-line"></i></div>
-                                <h4>CRM & Prospección B2B</h4>
+                                <h3 class="h4">CRM & Prospección B2B</h3>
                                 <p>Implementación de procesos comerciales estructurados, prospección calificada y automatizaciones para escalar las ventas corporativas.</p>
                             </div>
                         </div>
@@ -401,7 +408,7 @@
                         <!-- Columna Izquierda: Título -->
                         <div class="col-lg-5 text-center text-lg-start">
                             <span class="text-primary-custom fw-bold text-uppercase">Da el primer paso</span>
-                            <h3 id="contact-title" class="display-5 mt-2 fw-bold text-white"></h3>
+                            <h2 id="contact-title" class="display-5 mt-2 fw-bold text-white"></h2>
                             <p class="lead mt-3">
                                 Estamos listos para escuchar sobre tu próximo desafío. Ya sea software a medida, capacitaciones de IA o implementación de XamaSafe, te asesoramos sin compromiso.
                             </p>
@@ -519,7 +526,7 @@
             <div class="row g-4">
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <div class="mb-3">
-                        <h4 class="mb-0 text-white fw-bold">Grupo Xamanen</h4>
+                        <p class="h4 mb-0 text-white fw-bold">Grupo Xamanen</p>
                     </div>
                     <p class="text-light-muted">
                         Potenciamos negocios con tecnología de vanguardia, software a medida, capacitaciones en IA y plataformas especializadas en higiene, seguridad y minería desde San Juan, Argentina.
@@ -530,7 +537,7 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-6">
-                    <h5 class="mb-3 text-white fw-semibold">Navegación</h5>
+                    <p class="h5 mb-3 text-white fw-semibold">Navegación</p>
                     <ul class="list-unstyled d-flex flex-column gap-2">
                         <li><a href="#capacidades" class="footer-link">Capacidades</a></li>
                         <li><a href="#plataformas" class="footer-link">Plataformas</a></li>
@@ -540,7 +547,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-3 col-6">
-                    <h5 class="mb-3 text-white fw-semibold">Ecosistema Xamanen</h5>
+                    <p class="h5 mb-3 text-white fw-semibold">Ecosistema Xamanen</p>
                     <ul class="list-unstyled d-flex flex-column gap-2">
                         <li>
                             <a href="https://xamasafe.com/login" target="_blank" rel="noopener noreferrer" class="footer-link text-cyan">
@@ -560,7 +567,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-3">
-                    <h5 class="mb-3 text-white fw-semibold">Contacto & Sede</h5>
+                    <p class="h5 mb-3 text-white fw-semibold">Contacto & Sede</p>
                     <ul class="list-unstyled d-flex flex-column gap-2 text-light-muted mb-3">
                         <li><i class="fas fa-map-marker-alt me-2 text-cyan"></i> San Juan, Argentina</li>
                         <li><i class="fas fa-envelope me-2 text-cyan"></i> consultas@grupoxamanen.com</li>
@@ -592,14 +599,14 @@
         </div>
     </footer>
 
-    <!-- JS Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- JS Libraries (defer para optimizar hilo principal y FCP) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" defer></script>
 
     <!-- Custom JS -->
-    <script src="index.js?v=2.1"></script>
+    <script src="index.js?v=2.2" defer></script>
 </body>
 
 </html>
