@@ -8,6 +8,23 @@
    - Accesibilidad: focus rings visibles y soporte para prefers-reduced-motion
 =================================================================== */
 
+/* ==================== 0. OPTIMIZACIÓN DE FUENTES & LIGHTHOUSE ==================== */
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-solid-900.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Font Awesome 6 Brands';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-brands-400.woff2') format('woff2');
+}
+
 /* ==================== 1. TOKENS Y VARIABLES ==================== */
 :root {
     /* Paleta Aurora Tecnológica */
@@ -669,4 +686,35 @@ footer {
         animation: none !important;
         transform: none !important;
     }
+}
+
+/* ==================== 13. ADVISOR CONTACT CARDS ==================== */
+.advisor-contact-link {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.25s ease;
+}
+
+.advisor-contact-link:hover {
+    background: rgba(37, 211, 102, 0.12);
+    border-color: rgba(37, 211, 102, 0.4);
+    transform: translateX(4px);
+}
+
+.advisor-contact-link .badge-chat {
+    background: rgba(37, 211, 102, 0.15);
+    color: #25d366;
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.advisor-contact-link:hover .badge-chat {
+    background: #25d366;
+    color: #0b0f19;
 }
